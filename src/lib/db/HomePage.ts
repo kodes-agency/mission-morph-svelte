@@ -67,6 +67,7 @@ export default function () {
         data {
           attributes {
             title
+            publishedAt
             thumbnail {
               data {
                 attributes {

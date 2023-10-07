@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { Maybe } from "../../../../__generated__/graphql";
     export let heading: Maybe<string> | undefined
-    export let scroll: string
+    export let scroll: string = "Don't be shy & scroll down ;)"
 </script>
 
 <section class=" bg-gradient-to-b from-dark-purple to-light-purple h-screen flex flex-col items-center justify-center p-10">

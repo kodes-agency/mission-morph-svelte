@@ -34,7 +34,7 @@ export default function () {
                 data {
                   attributes {
                     alternativeText
-                    width
+                    url
                   }
                 }
               }
@@ -64,9 +64,12 @@ export default function () {
             subService {
               price
               title
-              features
+              features {
+                feature
+              }
               content
               id
+              
             }
             title
           }

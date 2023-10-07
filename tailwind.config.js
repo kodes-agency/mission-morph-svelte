@@ -15,7 +15,11 @@ export default {
       'green': '#2D9250',
       'black': '#181818',
       'white': '#FFFFFF',
-      'gray': '#D9D9D9'
+      'gray': '#D9D9D9',
+      'seo-bg-color': '#0065C1',
+      'seo-text-color': '#6CB9FF',
+      'web-bg-color': '#C17400',
+      'web-text-color': '#FFC700',
     }
   },
   plugins: [],

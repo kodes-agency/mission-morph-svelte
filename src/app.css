@@ -2,7 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .masonry {
+    column-gap: 1.5em;
+    column-count: 2;
+  }
+  .break-inside {
+    break-inside: avoid;
+    margin-bottom: 1.5em;
+  }
+}
 
 html {
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --dark-purple: #500852;
+  --medium-purple: #daa0ff;
+  --light-purple: #6f4f84;
+  --cyan: #4a8f94;
+  --light-cyan: #bdffff;
+  --magenta: #af486d;
+  --cyan: #4a8f94;
+  --yellow: #ab9e29;
+  --green: #2d9250;
+  --black: #181818;
+  --white: #ffffff;
+  --gray: #d9d9d9;
+  --seo-bg-color: #0065c1;
+  --seo-text-color: #6cb9ff;
+  --web-bg-color: #c17400;
+  --web-text-color: #ffc700;
 }

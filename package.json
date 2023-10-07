@@ -29,6 +29,10 @@
 		"@graphql-codegen/cli": "^5.0.0",
 		"@graphql-codegen/client-preset": "^4.1.0",
 		"@graphql-typed-document-node/core": "^3.2.0",
-		"graphql": "^16.8.1"
+		"@splidejs/svelte-splide": "^0.2.9",
+		"graphql": "^16.8.1",
+		"gsap": "npm:@gsap/shockingly@^3.12.2",
+		"svelte-bricks": "^0.2.1",
+		"uuid": "^9.0.1"
 	}
 }
