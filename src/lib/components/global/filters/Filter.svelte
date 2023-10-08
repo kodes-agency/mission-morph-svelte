@@ -2,6 +2,7 @@
   import { page } from "$app/stores";
   import type { BlogCategoryEntity } from "../../../../__generated__/graphql";
   import { goto, invalidateAll } from "$app/navigation";
+  import { fade, slide } from "svelte/transition";
 
   export let categories: BlogCategoryEntity[];
   let urlSearchParams = $page.url.searchParams;
@@ -10,13 +11,14 @@
 
 <div>
   {#if $page.url.searchParams.getAll("category").length > 0}
-    <div class="flex justify-center space-x-5">
+    <div class="flex justify-center space-x-5" transition:fade>
       {#each $page.url.searchParams.getAll("category") as filter}
         <span
-          class="p-2 bg-light-cyan flex rounded-sm items-center space-x-1
+          class="p-1 px-2 bg-light-cyan flex rounded-sm items-center space-x-1
         "
+        transition:fade
         >
-          <p>{filter}</p>
+          <p class=" font-serif">{filter}</p>
           <button
             class="h-4 w-4 flex items-center justify-center rounded-full hover:bg-white"
             on:click={() => {

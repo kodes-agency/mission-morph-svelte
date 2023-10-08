@@ -16,6 +16,14 @@
       <h2 class=" text-8xl font-black text-light-cyan">{heading}</h2>
       <p class=" text-light-cyan font-light max-w-xl text-xl">{content}</p>
     </div>
-    <a href="/#" class="text-xl text-light-cyan font-bold underline">{button}</a>
+    <button
+      on:click={() => {
+        Calendly.initPopupWidget({
+          url: "https://calendly.com/missionmorph/30min?hide_gdpr_banner=1",
+        });
+        return false;
+      }}
+      class="text-xl w-fit text-light-cyan font-bold underline">{button}</button
+    >
   </div>
 </section>

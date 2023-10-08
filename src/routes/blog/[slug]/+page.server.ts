@@ -8,7 +8,7 @@ export const load = async ({ params }) => {
         query: query(),
         variables: {
             "filters": {
-              "title": {
+              "slug": {
                 "eqi": `${params.slug}`
               }
             }

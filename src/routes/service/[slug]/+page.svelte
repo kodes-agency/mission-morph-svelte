@@ -8,7 +8,6 @@
     import type { Service } from '../../../__generated__/graphql.js';
     import { PUBLIC_IMG_URL } from '$env/static/public';
     export let data
-    console.log(data)
     let service: Service
     $: service = data.data.services.data[0].attributes
 </script>

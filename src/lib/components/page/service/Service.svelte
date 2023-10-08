@@ -42,7 +42,7 @@
         </svelte:fragment>
         <svelte:fragment slot="content">
           <div class="flex flex-col space-y-10">
-            <p class=" text-lg">{@html service.content}</p>
+            <p class=" text-lg">{@html service.contents}</p>
             <div class="grid grid-cols-2 gap-6">
               {#each service.features as feature}
                 <span class="flex space-x-3 items-center">

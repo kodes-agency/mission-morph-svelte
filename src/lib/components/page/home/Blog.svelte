@@ -77,27 +77,29 @@
           <SplideTrack>
             {#each blogs as blog}
               <SplideSlide>
-                <article class="flex space-x-10">
-                  <img
-                    class=" aspect-square h-60"
-                    src={PUBLIC_IMG_URL +
-                      blog.attributes?.thumbnail?.data?.attributes?.url}
-                    alt={blog.attributes?.thumbnail?.data?.attributes
-                      ?.alternativeText}
-                  />
-                  <div class="flex flex-col space-y-5 justify-evenly">
-                    <h3 class=" text-2xl font-bold text-medium-purple">
-                      {blog.attributes?.title}
-                    </h3>
-                    <p class=" text-lg text-white">
-                      {blog.attributes?.seo?.description}
-                    </p>
-
-                    <p class=" text-white">
-                      {formatDate(blog.attributes?.publishedAt)}
-                    </p>
-                  </div>
-                </article>
+                <a href="/blog/{blog.attributes?.slug}">
+                  <article class="flex space-x-10">
+                    <img
+                      class=" aspect-square object-cover h-60"
+                      src={PUBLIC_IMG_URL +
+                        blog.attributes?.thumbnail?.data?.attributes?.url}
+                      alt={blog.attributes?.thumbnail?.data?.attributes
+                        ?.alternativeText}
+                    />
+                    <div class="flex flex-col space-y-5 justify-evenly">
+                      <h3 class=" text-2xl font-bold text-medium-purple">
+                        {blog.attributes?.title}
+                      </h3>
+                      <p class=" text-lg text-white">
+                        {blog.attributes?.seo?.description}
+                      </p>
+  
+                      <p class=" text-white">
+                        {formatDate(blog.attributes?.publishedAt)}
+                      </p>
+                    </div>
+                  </article>
+                </a>
               </SplideSlide>
             {/each}
           </SplideTrack>

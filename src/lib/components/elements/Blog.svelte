@@ -7,9 +7,10 @@
     export let title: Maybe<string>
     export let date: Maybe<string>
     export let id: Maybe<string> | Maybe<number>
+    export let slug: Maybe<string>
 </script>
 
-<a href="/blog/{id}">
+<a href="/blog/{slug}">
     {#if Number(id) % 3 === 0 && id != 0 } 
         <article class="border border-black bg-black flex flex-col ">
             <div class="p-4 w-full flex flex-col justify-between h-full">

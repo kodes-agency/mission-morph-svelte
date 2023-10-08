@@ -10,7 +10,6 @@
 
     export let data
 
-    console.log(data.data)
     let page: HomePage = data.data.homePage?.data?.attributes
 </script>
 <Hero 

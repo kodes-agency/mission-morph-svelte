@@ -49,6 +49,7 @@ export default function () {
       services {
         data {
           attributes {
+            slug
             color
             homePageContent
             homePageThumbnail {
@@ -67,6 +68,7 @@ export default function () {
         data {
           attributes {
             title
+            slug
             publishedAt
             thumbnail {
               data {

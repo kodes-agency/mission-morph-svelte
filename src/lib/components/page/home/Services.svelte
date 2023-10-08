@@ -57,7 +57,7 @@
           class="w-80 h-auto -mr-10 z-0"
         />
         <p class=" text-lg text-light-cyan pb-10 max-w-lg font-light z-10">{service.attributes?.homePageContent}</p>
-        <a href="/service/{service.attributes?.homePageTitle}">Learn more</a>
+        <a href="/service/{service.attributes?.slug}">Learn more</a>
     </div>
   {/each}
 </div>

@@ -2,7 +2,7 @@ import { gql } from "@apollo/client/core/index.js";
 
 export default function () {
   const query = gql`
-    query Blogs {
+    query Blogs($filters: BlogFiltersInput) {
       blogCategories {
         data {
           attributes {
@@ -10,10 +10,11 @@ export default function () {
           }
         }
       }
-      blogs {
+      blogs(filters: $filters) {
         data {
           id
           attributes {
+            slug
             blogCategories {
               data {
                 attributes {

@@ -67,7 +67,7 @@ export default function () {
               features {
                 feature
               }
-              content
+              contents
               id
               
             }

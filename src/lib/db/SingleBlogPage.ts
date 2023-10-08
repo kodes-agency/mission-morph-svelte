@@ -13,7 +13,8 @@ export default function () {
                 }
               }
             }
-            content
+            contents
+            slug
             seo {
               description
               keywords
