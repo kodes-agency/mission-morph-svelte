@@ -8,10 +8,11 @@
     export let date: Maybe<string>
     export let id: Maybe<string> | Maybe<number>
     export let slug: Maybe<string>
+    export let variation: boolean
 </script>
 
 <a href="/blog/{slug}">
-    {#if Number(id) % 3 === 0 && id != 0 } 
+    {#if Number(id) % 3 === 0 && id != 0 && variation } 
         <article class="border border-black bg-black flex flex-col ">
             <div class="p-4 w-full flex flex-col justify-between h-full">
                 <div class="pb-10">
@@ -29,7 +30,7 @@
             </div>
         </article>
     {:else}
-        <article class="border border-black flex flex-col ">
+        <article class="border bg-white border-black flex flex-col ">
             <img {src} {alt} class="w-full h-60 object-cover">
             <div class="p-4 w-full flex flex-col justify-between h-full">
                 <div class="pb-10">

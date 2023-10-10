@@ -8,8 +8,8 @@
   $: blog = data.data.blogs.data[0].attributes;
 </script>
 
-<main class="flex p-20 space-x-10 mt-20">
-    <div class="sticky top-24 h-fit">
+<main class="flex flex-col lg:flex-row p-6 lg:p-20 space-y-10 lg:space-x-10 mt-20">
+    <div class="lg:sticky lg:top-24 h-fit">
         <SingleHero
           title={blog.title}
           date={blog.publishedAt}

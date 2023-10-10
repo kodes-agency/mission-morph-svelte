@@ -20,6 +20,8 @@ export default {
       'seo-text-color': '#6CB9FF',
       'web-bg-color': '#C17400',
       'web-text-color': '#FFC700',
+      'brand-text-color': '#F85A50',
+      'brand-bg-color': '#82150F'
     }
   },
   plugins: [],

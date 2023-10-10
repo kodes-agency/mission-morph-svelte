@@ -2,37 +2,45 @@
   import type { Maybe } from "../../../../__generated__/graphql";
   import type { BlogEntity } from "../../../../__generated__/graphql";
   import "@splidejs/svelte-splide/css/core";
-  import { Splide, SplideSlide, SplideTrack } from "@splidejs/svelte-splide";
   import { PUBLIC_IMG_URL } from "$env/static/public";
-  import formatDate from "$lib/functions/formatDate";
+  import { Masonry } from "svelte-bricks";
+  import Blog from "$lib/components/elements/Blog.svelte";
 
   export let heading: Maybe<string> | undefined;
   export let content: Maybe<string> | undefined;
   export let src: Maybe<string> | undefined;
   export let alt: Maybe<string> | undefined;
   export let blogs: BlogEntity[];
+  console.log(blogs)
 
-  let currentIndex: number = 0;
+  let [minColWidth, maxColWidth, gap] = [300, 400, 30];
+  let width: number | undefined;
+  let height: number;
+
+
+  
+
 </script>
 
-<section class="min-h-[200vh] bg-black">
-  <div class="h-screen flex flex-col items-center justify-center relative">
-    <img
-      {src}
-      {alt}
-      class="absolute top-0 left-0 w-full h-screen object-cover z-0 grayscale"
-    />
-    <div class="relative z-10 items-center flex flex-col space-y-8">
-      <h2 class=" text-8xl font-bold font-serif text-white text-center">
-        {heading}
-      </h2>
-      <p class=" text-white font-serif text-xl max-w-3xl text-center">
-        {content}
-      </p>
+<section class="min-h-[200vh] bg-black lg:p-10">
+    <div class="h-screen flex flex-col items-center justify-center relative p-6">
+      <img
+        {src}
+        {alt} 
+        class="absolute 
+         top-0 left-0 w-full h-screen object-cover z-0 grayscale"
+      />
+      <div class="relative z-10 items-center flex flex-col space-y-8">
+        <h2 class="text-5xl lg:text-8xl font-bold font-serif text-white text-center">
+          {heading}
+        </h2>
+        <p class=" text-white font-serif text-xl max-w-3xl text-center">
+          {content}
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="h-screen flex flex-col items-center justify-center">
-    <div class=" max-w-3xl flex flex-col space-y-10">
+  <div class="min-h-screen p-10 md:p-20 ">
+    <!-- <div class=" max-w-3xl flex flex-col space-y-10">
       <div class="flex justify-between -mb-8">
         <div />
         <p class=" text-lg text-white">{currentIndex + 1}/{blogs.length}</p>
@@ -77,8 +85,8 @@
           <SplideTrack>
             {#each blogs as blog}
               <SplideSlide>
-                <a href="/blog/{blog.attributes?.slug}">
-                  <article class="flex space-x-10">
+                <a href="/blog/{blog.attributes?.slug}" class="max-w-[100vw]">
+                  <article class="flex flex-col space-x-10 max-w-[90vw]">
                     <img
                       class=" aspect-square object-cover h-60"
                       src={PUBLIC_IMG_URL +
@@ -128,6 +136,26 @@
           </div>
         </div>
       </Splide>
-    </div>
+    </div> -->
+    <Masonry
+      items={blogs}
+      {minColWidth}
+      {maxColWidth}
+      {gap}
+      let:item
+      bind:width
+      bind:height
+    >
+    <Blog
+      title={item.attributes?.title}
+      date={item.attributes?.publishedAt}
+      src={PUBLIC_IMG_URL + item.attributes?.thumbnail?.data?.attributes?.url}
+      alt={item.attributes?.thumbnail?.data?.attributes?.alternativeText}
+      category={item.attributes?.blogCategories?.data}
+      id={item.id}
+      slug={item.attributes?.slug}
+      variation={false}
+    />
+    </Masonry>
   </div>
 </section>

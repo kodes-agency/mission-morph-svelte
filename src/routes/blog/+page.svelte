@@ -25,7 +25,7 @@
   />
 {/if}
 
-<section class="p-60">
+<section class="p-6 pt-20 md:p-20 lg:p-60">
   <Filter categories={data.data.blogCategories?.data} />
   <Masonry
     items={blogs}
@@ -44,6 +44,7 @@
       category={item.attributes?.blogCategories?.data}
       id={item.id}
       slug={item.attributes?.slug}
+      variation={true}
     />
   </Masonry>
 </section>

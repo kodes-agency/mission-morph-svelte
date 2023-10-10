@@ -49,10 +49,10 @@
       {/each}
     </div>
   {/if}
-  <div class="flex justify-center py-10">
+  <div class="flex justify-center py-5 lg:py-10">
     {#each categories as category}
       <button
-        class="p-2 px-10 font-serif text-lg"
+        class="p-2 px-5 lg:px-10 font-serif text-lg"
         on:click={() => {
           if (
             urlSearchParams

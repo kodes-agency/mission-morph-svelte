@@ -62,7 +62,7 @@
 	{/if}
 	<div class="accordion-title w-full {isOpen ? "isOpen" : ""}">
 		<div class="flex flex-col">
-			<div class="w-full h-px bg-white my-3 mt-10"></div>
+			<div class="w-full h-px bg-white my-3 lg:mt-10"></div>
 			<div class="flex justify-between">
 				<slot name="footer"/>
 				<button
@@ -71,7 +71,7 @@
 					aria-expanded={isOpen}
 					aria-controls="accordion-{componentId}"
 				>
-					<p class="font-bold underline">{isOpen ? "close" : "open"}</p>
+					<p class="text-sm md:text-base font-bold underline">{isOpen ? "close" : "open"}</p>
 				</button>
 				</div>
 			</div>

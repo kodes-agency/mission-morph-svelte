@@ -7,9 +7,9 @@
     export let alt: string
 </script>
 
-<section class="flex flex-col space-y-10 min-w-[40vw]">
-    <h1 class=" text-6xl font-serif font-medium text-black">{title}</h1>
-    <div class="flex justify-between w-full">
+<section class="flex flex-col-reverse lg:flex-col space-y-6 md:space-y-10 min-w-[40vw]">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-black">{title}</h1>
+    <div class="flex py-2 justify-between w-full">
         <p class=" text-base font-serif">{formatDate(date)}</p>
         <span class=" flex space-x-2">
             {#each categories as category }

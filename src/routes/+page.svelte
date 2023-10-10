@@ -1,6 +1,6 @@
 
 <script lang="ts">
-    import type { HomePage, BlogEntity } from "../__generated__/graphql";
+    import type { HomePage } from "../__generated__/graphql";
     import Hero from "$lib/components/page/home/Hero.svelte";
     import About from "$lib/components/page/home/About.svelte";
     import Services from "$lib/components/page/home/Services.svelte";
@@ -37,5 +37,5 @@
     content={page.blogContent}
     src={PUBLIC_IMG_URL+page.blogThumbnail?.data?.attributes?.url}
     alt={page.blogThumbnail?.data?.attributes?.alternativeText}
-    blogs={data.data?.blogs.data}
+    blogs={page.blogs?.data}
 />

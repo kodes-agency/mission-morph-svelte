@@ -17,6 +17,31 @@ export default function () {
                 }
               }
             }
+            blogs {
+              data {
+                id
+                attributes {
+                  title
+                  slug
+                  thumbnail {
+                    data {
+                      attributes {
+                        alternativeText
+                        url
+                      }
+                    }
+                  }
+                  publishedAt
+                  blogCategories {
+                    data {
+                      attributes {
+                        category
+                      }
+                    }
+                  }
+                }
+              }
+            }
             blogContent
             blogHeading
             blogThumbnail {
@@ -61,26 +86,6 @@ export default function () {
               }
             }
             homePageTitle
-          }
-        }
-      }
-      blogs {
-        data {
-          attributes {
-            title
-            slug
-            publishedAt
-            thumbnail {
-              data {
-                attributes {
-                  alternativeText
-                  url
-                }
-              }
-            }
-            seo {
-              description
-            }
           }
         }
       }

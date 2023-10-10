@@ -12,8 +12,8 @@
     {alt}
     class="absolute top-0 left-0 w-full h-screen object-cover z-0 grayscale"
   />
-  <div class="relative z-10 items-center flex flex-col space-y-8">
-    <h2 class=" text-8xl font-bold font-serif text-white text-center">
+  <div class="relative z-10 items-center flex flex-col space-y-8 p-5">
+    <h2 class="text-5xl md:text-6xl lg:text-8xl font-bold font-serif text-white text-center">
       {heading}
     </h2>
     <p class=" text-white font-serif text-xl max-w-3xl text-center">

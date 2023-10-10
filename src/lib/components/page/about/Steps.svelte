@@ -11,26 +11,26 @@
   let wrapper: HTMLElement
 
   onMount(()=>{
-    const ctx = gsap.context(() => {
-      const sections: HTMLElement[] = gsap.utils.toArray("section");
-      let maxWidth = sections.length * screen.width
+    // const ctx = gsap.context(() => {
+    //   const sections: HTMLElement[] = gsap.utils.toArray("section");
+    //   let maxWidth = sections.length * screen.width
     
-      gsap.to(wrapper, {
-        xPercent: -100 * (sections.length),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".wrapper",
-          pin: true,
-          scrub: true,
-          snap: 1 / (sections.length) ,
-          end: () => `+=${maxWidth}`,
-          invalidateOnRefresh: true
-        }
-      });
-    })
-    return ()=>{
-      ctx.revert()
-    }
+    //   gsap.to(wrapper, {
+    //     xPercent: -100 * (sections.length + 1),
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: ".wrapper",
+    //       pin: true,
+    //       scrub: true,
+    //       snap: 1 / (sections.length) ,
+    //       end: () => `+=${maxWidth}`,
+    //       invalidateOnRefresh: true
+    //     }
+    //   });
+    // })
+    // return ()=>{
+    //   ctx.revert()
+    // }
   })
 
 
@@ -38,9 +38,9 @@
 </script>
 
 
-  <section bind:this={wrapper} class="flex wrapper">
+  <section bind:this={wrapper} class="">
     {#each steps as step }
-    <div class="section">
+    <div class="">
       <Step 
         heading={step.title}
         content={step.content}
