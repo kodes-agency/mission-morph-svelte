@@ -2,6 +2,7 @@
 	import { slide } from 'svelte/transition'
 	import { getAccordionOptions } from './context'
 	import { v4 as uuidv4 } from 'uuid';
+	import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 
 	// by default the accordion item is closed
@@ -25,6 +26,7 @@
 	function handleClick() {
 		// if `collapse` is passed only one item can be active
 		collapse ? setActive() : toggleOpen()
+		ScrollTrigger.refresh(true)
 	}
 
 	// the accordion item to be open by default

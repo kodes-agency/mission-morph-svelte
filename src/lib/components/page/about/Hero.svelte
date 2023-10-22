@@ -1,8 +1,14 @@
 <script lang="ts">
+  import { ScrollSmoother } from 'gsap/dist/ScrollSmoother'
+  import { onMount } from 'svelte';
   export let src: string | undefined;
   export let alt: string | undefined;
   export let heading: string | undefined;
   export let content: string | undefined;
+
+  onMount(()=>{
+    
+  })
 </script>
 
 <section

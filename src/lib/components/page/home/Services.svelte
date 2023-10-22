@@ -1,63 +1,162 @@
 <script lang="ts">
-  import type { Maybe } from "../../../../__generated__/graphql";
   import type { ServiceEntity } from "../../../../__generated__/graphql";
+  import ScrollSmoother from "gsap/dist/ScrollSmoother";
   import { PUBLIC_IMG_URL } from "$env/static/public";
   import { onMount } from "svelte";
+  import gsap from "gsap/dist/gsap";
+  import ScrollTrigger from "gsap/dist/ScrollTrigger";
+  import SplitText from "gsap/dist/SplitText";
+  import { fade } from "svelte/transition";
 
-  export let heading: Maybe<string> | undefined;
   export let services: Array<ServiceEntity>;
-    let serviceDivs: HTMLElement[]
-    let activeService = "0"
+  let serviceDivs: HTMLElement[];
+  let activeService = 0;
+  let smoother: any;
+  let currentService: number = 0;
+  let sectionEl: HTMLElement;
+  let headingEls: NodeListOf<HTMLElement>;
+  let textEls: NodeListOf<HTMLElement>;
+  let imgEls: NodeListOf<HTMLElement>;
+  let splitText: any;
+  let toggleServiceTl = gsap.timeline({
+  })
 
-    function toggleService(i:any){
-        serviceDivs.forEach((div)=>{
-            if(div.dataset.id != i){
-                div.style.display = "none"
-            } else {
-                div.style.display = "flex"
-                activeService = i
-            }
-        })
-    }
+  function toggleService(i: any) {
+    serviceDivs.forEach((div) => {
+      if (div.dataset.id != i) {
+        div.style.visibility = "hidden";
+      } else {
+        initMenuAnimation()
+        div.style.visibility = "visible";
+        activeService = i;
+        console.log(div)
+        // gsap.from(div., {
+        //   yPercent: 100,
+        //   opacity: 0.5,
+        //   duration: 1,
+        //   ease: "power4.inOut",
+        // });
+      }
+    });
+  }
+
+  function initMenuAnimation() {
+    toggleServiceTl.restart();
+  }
+
 
   onMount(() => {
     // @ts-ignore
     serviceDivs = document.querySelectorAll(".service");
-    serviceDivs.forEach((div) => {
-      if(div.dataset.id != activeService) {
-        div.style.display = "none"
-      }
+    headingEls = document.querySelectorAll(".heading");
+    textEls = document.querySelectorAll(".text");
+    imgEls = document.querySelectorAll(".img");
+
+    smoother = ScrollSmoother.get();
+
+    const ctx = gsap.context(() => {
+      headingEls.forEach((heading) => {
+        splitText = new SplitText(heading, {
+          type: "words,chars",
+        });
+
+        new SplitText(heading, {
+          type: "lines",
+          linesClass: "splitTargetClass",
+        });
+
+        gsap.set(".splitTargetClass", {
+          overflow: "hidden",
+          lineHeight: 1.12,
+        });
+
+        // let tl = gsap.timeline({
+        //   scrollTrigger: {
+        //     trigger: sectionEl,
+        //     start: "top +=400",
+        //     end: "+=500",
+        //   },
+        // });
+
+        gsap.from(splitText.chars, {
+          yPercent: 100,
+          opacity: 0.5,
+          duration: 1,
+          ease: "power4.inOut",
+        });
+      });
     });
+
+    return () => {
+      ctx.revert();
+    };
   });
 </script>
 
 <section
-  class=" bg-gradient-to-b from-cyan to-magenta min-h-screen flex flex-col lg:items-center lg:justify-center"
+  bind:this={sectionEl}
+  class="bg-gradient-to-b from-cyan to-magenta min-h-screen flex flex-col lg:items-center lg:justify-center"
 >
-<div class="relative flex flex-col max-w-5xl p-6">
-  <div class="flex flex-col space-y-5 relative z-10">
-    <h2 class="text-5xl md:text-8xl font-black text-light-cyan">{heading}</h2>
-    <div class="flex flex-wrap lg:flex-col lg:space-x-0 pb-5 lg:pt-10 lg:space-y-10">
-        {#each services as service, i}
-          <button
-            class="my-2 mr-5 w-fit font-black text-light-cyan uppercase lg:text-xl border border-medium-purple rounded-full p-1 px-6 {i == Number(activeService) ? " bg-light-purple" : " bg-transparent"}"
-            on:click={()=>{toggleService(i)}}
-            >{service.attributes?.homePageTitle}</button
+  <div class="max-w-5xl w-full h-full relative pt-20">
+    <div class="flex flex-col pl-10 absolute z-20 top-80" data-speed="1.05">
+      {#each services as service, i}
+        <a
+          href="/service/{service.attributes?.slug}"
+          class="tiny my-2 mr-5 w-fit relative font-black text-light-cyan uppercase lg:text-3xl p-1 {i ==
+          Number(currentService)
+            ? 'text-opacity-100 border-b-4 border-medium-purple '
+            : ' text-opacity-50 border-b-4 border-[rgba(0,0,0,0)]'}"
+          on:mouseenter={async () => {
+            toggleService(i);
+            currentService = i;
+          }}>{service.attributes?.homePageTitle}</a
+        >
+      {/each}
+    </div>
+    <div class="relative w-full h-screen">
+      {#each services as service, i}
+        <article
+          data-id={i}
+          class="service absolute top-0 left-0 {currentService !== i
+            ? 'invisible'
+            : 'visible'}"
+        >
+          <a
+            in:fade
+            href="/service/{service.attributes?.slug}"
+            class="interactable"
+            data-labelBold="explore"
+            data-label={service.attributes?.homePageCursorLable}
           >
-        {/each}
+            <div class="relative space-y-10 min-h-screen">
+              <h2
+                data-speed="1.05"
+                class="heading z-10 relative text-5xl md:text-8xl font-black text-light-cyan"
+              >
+                {service.attributes?.homePageCTA}
+              </h2>
+              <div
+                data-speed="1.05"
+                class="text flex justify-end z-10 relative"
+              >
+                <p
+                  class="z-10 relative text-lg text-light-cyan max-w-lg lg:font-light"
+                >
+                  {service.attributes?.homePageContent}
+                </p>
+              </div>
+              <img
+                data-speed="0.95"
+                src={PUBLIC_IMG_URL +
+                  service.attributes?.homePageThumbnail?.data?.attributes?.url}
+                alt={service.attributes?.homePageThumbnail?.data?.attributes
+                  ?.alternativeText}
+                class="img w-52 h-72 object-cover lg:w-80 lg:h-auto absolute -top-20 left-1/4 z-0"
+              />
+            </div>
+          </a>
+        </article>
+      {/each}
     </div>
   </div>
-  {#each services as service, i}
-    <div class="service relative lg:absolute lg:-top-16 lg:left-48 flex flex-col lg:flex-row items-end" data-id={i}>
-        <img
-          src={PUBLIC_IMG_URL +
-            service.attributes?.homePageThumbnail?.data?.attributes?.url}
-          alt={service.attributes?.homePageThumbnail?.data?.attributes
-            ?.alternativeText}
-          class="w-52 h-72 object-cover lg:w-80 lg:h-auto absolute -top-40 lg:top-0 lg:static lg:-mr-10 z-0"
-        />
-        <p class=" text-lg text-light-cyan pb-10 max-w-lg lg:font-light z-10">{service.attributes?.homePageContent}</p>
-    </div>
-  {/each}
-</div>
 </section>

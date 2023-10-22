@@ -7,11 +7,12 @@
 
 <section id="stats">
 
-    {#each stats as stat }
+    {#each stats as stat, i }
         <Stats 
             figure = {stat.number}
             contet = {stat.paragraph}
             color = {color}
+            id = {i}
         />
     {/each}
 </section>

@@ -7,13 +7,19 @@
     import Blog from "$lib/components/page/home/Blog.svelte";
     import CTA from "$lib/components/page/home/CTA.svelte";
     import { PUBLIC_IMG_URL } from "$env/static/public";
-
+    import { onMount } from "svelte";
     export let data
-
     let page: HomePage = data.data.homePage?.data?.attributes
+
+    onMount(()=>{
+
+    })
 </script>
 <Hero 
     heading={page.heroHeading}
+    imgLarge={page.heroVercorLarge?.data?.attributes}
+    imgMedium={page.heroVercorMedium?.data?.attributes}
+    imgSmall={page.heroVercorSmall?.data?.attributes}
 />
 <About 
     heading={page.aboutHeading}

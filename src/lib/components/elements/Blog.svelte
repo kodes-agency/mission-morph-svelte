@@ -9,6 +9,7 @@
     export let id: Maybe<string> | Maybe<number>
     export let slug: Maybe<string>
     export let variation: boolean
+    export let readMore: string = ""
 </script>
 
 <a href="/blog/{slug}">
@@ -43,7 +44,9 @@
                 </div>
                 <div class="flex justify-between w-full">
                     <p class="font-serif">{formatDate(date)}</p>
-                    <p class=" underline font-bold">read more</p>
+                    {#if readMore }
+                        <p class=" underline font-bold">{readMore}</p>
+                    {/if}
                 </div>
             </div>
         </article>

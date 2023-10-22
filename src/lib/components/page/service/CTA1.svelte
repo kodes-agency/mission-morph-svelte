@@ -1,5 +1,12 @@
 <script lang="ts">
+  import { ScrollSmoother } from 'gsap/dist/ScrollSmoother'
+  import { onMount } from 'svelte';
   export let color: string | undefined;
+
+  onMount(()=>{
+        let smoother = ScrollSmoother.get()
+    })
+
 
   let countDownStart = 120000;
   let currentCount = countDownStart;
@@ -21,31 +28,32 @@
 <section class="bg-black h-screen flex flex-col justify-center items-center">
   <div class="max-w-4xl flex flex-col items-center justify-center space-y-24">
     <h2
+      data-speed="1.05"
       class="text-{color}-text-color text-4xl md:text-5xl lg:text-8xl font-black uppercase text-center"
     >
       Ready to schedule <br />a meeting?
     </h2>
     <div class="flex space-x-1">
       <div class="flex flex-col items-center w-12 md:w-20 lg:w-40">
-        <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold">00</p>
-        <p class="text-{color}-text-color text-xs md:text-base lg:text-lg md:uppercase">days</p>
+        <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold" data-speed="1.05">00</p>
+        <p class="text-{color}-text-color text-xs md:text-base lg:text-lg md:uppercase" data-speed="1.06">days</p>
       </div>
-      <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold">:</p>
+      <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold" data-speed="1.05">:</p>
       <div class="flex flex-col items-center w-12 md:w-20 lg:w-40">
-        <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold">0{hours}</p>
-        <p class="text-{color}-text-color text-xs md:text-base lg:text-lg md:uppercase">hours</p>
+        <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold" data-speed="1.05">0{hours}</p>
+        <p class="text-{color}-text-color text-xs md:text-base lg:text-lg md:uppercase" data-speed="1.06">hours</p>
       </div>
-      <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold">:</p>
+      <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold" data-speed="1.05">:</p>
       <div class="flex flex-col items-center w-12 md:w-20 lg:w-40">
-        <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold">0{mins}</p>
-        <p class="text-{color}-text-color text-xs md:text-base lg:text-lg md:uppercase">minutes</p>
+        <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold" data-speed="1.05">0{mins}</p>
+        <p class="text-{color}-text-color text-xs md:text-base lg:text-lg md:uppercase" data-speed="1.06">minutes</p>
       </div>
-      <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold">:</p>
+      <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold" data-speed="1.05">:</p>
       <div class="flex flex-col items-center w-12 md:w-20 lg:w-40">
-        <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold">
+        <p class="text-white text-4xl md:text-5xl lg:text-8xl font-bold" data-speed="1.05">
           {secs.toString().length > 1 ? secs : " 0" + secs}
         </p>
-        <p class="text-{color}-text-color text-xs md:text-base lg:text-lg md:uppercase">seconds</p>
+        <p class="text-{color}-text-color text-xs md:text-base lg:text-lg md:uppercase" data-speed="1.06">seconds</p>
       </div>
     </div>
     <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-20 lg:space-x-40">

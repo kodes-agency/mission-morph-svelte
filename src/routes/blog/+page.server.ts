@@ -3,7 +3,6 @@ import query from "$lib/db/BlogsPage";
 
 /** @type {import('@sveltejs/kit').Load} */
 export const load = async ({ url }) => {
-    console.log("run")
   const data = getClient().query({
     query: query(),
     variables: {

@@ -17,6 +17,40 @@ export default function () {
                 }
               }
             }
+            images {
+              image {
+                data {
+                  attributes {
+                    url
+                    alternativeText
+                  }
+                }
+              }
+            }
+            heroVercorLarge {
+              data {
+                attributes {
+                  alternativeText
+                  url
+                }
+              }
+            }
+            heroVercorMedium {
+              data {
+                attributes {
+                  alternativeText
+                  url
+                }
+              }
+            }
+            heroVercorSmall {
+              data {
+                attributes {
+                  alternativeText
+                  url
+                }
+              }
+            }
             blogs {
               data {
                 id
@@ -76,6 +110,8 @@ export default function () {
           attributes {
             slug
             color
+            homePageCursorLable
+            homePageCTA
             homePageContent
             homePageThumbnail {
               data {

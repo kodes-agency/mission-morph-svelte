@@ -1,10 +1,15 @@
 <script lang="ts">
   import Accordion from "$lib/components/global/accordion/accordion.svelte";
+  import { ScrollSmoother } from 'gsap/dist/ScrollSmoother'
   import AccordionItem from "$lib/components/global/accordion/accordion-item.svelte";
   import type { ComponentServiceLayoutSubService } from "../../../../__generated__/graphql";
   import { onMount } from "svelte";
   export let subservice: ComponentServiceLayoutSubService[];
   export let color: string | undefined;
+
+  onMount(()=>{
+        let smoother = ScrollSmoother.get()
+    })
 
   let textColor: string;
   $: if (color == "seo") {
@@ -14,15 +19,12 @@
   } else if (color == "brand") {
     textColor = "brand-text-color";
   } 
-
-  onMount(()=>{
-    console.log(textColor, color)
-  })
 </script>
 
 <section
-  class=" min-h-screen bg-black flex flex-col lg:pl-[15vw] 2xl:pl-[20vw] p-6 md:p-20 lg:p-40"
+  class=" min-h-screen bg-black flex flex-col lg:pl-[15vw] 2xl:pl-[20vw] p-6 md:p-20 lg:p-40 z-10"
 >
+<div data-speed="1.1">
   <Accordion
     --accordion-width="70ch"
     --accordion-color="var(--white)"
@@ -82,4 +84,5 @@
       </AccordionItem>
     {/each}
   </Accordion>
+</div>
 </section>

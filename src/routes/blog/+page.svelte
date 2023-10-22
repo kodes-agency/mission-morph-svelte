@@ -8,7 +8,6 @@
   import { page } from "$app/stores";
 
   export let data;
-  console.log(data)
   let [minColWidth, maxColWidth, gap] = [300, 400, 30];
   let width: number | undefined;
   let height: number;

@@ -5,7 +5,7 @@
   </script>
   
   <div
-    class="bg-gradient-to-b from-green to-dark-purple h-screen flex flex-col lg:pl-[15vw] justify-center "
+    class="flex flex-col lg:pl-[15vw] justify-center "
   >
     <div class="flex flex-col max-w-5xl relative z-10 p-6 space-y-4">
       <h2 class="text-4xl lg:text-7xl font-black text-light-cyan">{id}. {heading}</h2>
