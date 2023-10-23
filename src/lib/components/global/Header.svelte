@@ -106,7 +106,7 @@
 
 <nav class="relative">
   <div
-    class="{$page.route.id?.includes('/blog/[slug]')
+    class="tiny {$page.route.id?.includes('/blog/[slug]')
       ? ''
       : 'w-[33vw]'} h-fit fixed top-5 md:top-10 z-50 left-5 md:left-10 lg:left-20"
   >
@@ -127,11 +127,9 @@
     </a>
   </div>
   <div
-    class="{$page.route.id?.includes('/blog/[slug]')
-      ? 'flex lg:hidden'
-      : 'flex'} justify-center pt-3 fixed top-4 md:top-10 z-50 left-1/2 -translate-x-1/2"
+    class="justify-center pt-3 fixed top-4 md:top-10 z-50 left-1/2 -translate-x-1/2"
   >
-    <a href="/">
+    <a href="/" class="tiny">
       <svg
         class="w-40 md:w-auto"
         width="203"
@@ -203,7 +201,7 @@
     </a>
   </div>
   <div class="h-fit fixed top-5 md:top-10 z-50 right-5 md:right-10 lg:right-20">
-    <button on:click={() => {initMenuAnimation()}} class=" {$page.url.pathname.includes("blog") || isOpen ? "text-black" : "text-white"} border-y py-1"> 
+    <button on:click={() => {initMenuAnimation()}} class="tiny {$page.url.pathname.includes("blog") || isOpen ? "text-black" : "text-white"} border-y py-1"> 
       <div class="overflow-hidden h-6">  
         <div bind:this={closeButtonTextWrapper} class="flex flex-col">
           <p>Menu</p>
@@ -226,15 +224,16 @@
           </p>
           <a
             on:mouseenter={(e) => {
+              console.log($page)
               mouseEnterBlur(e);
             }}
             on:mouseleave={(e) => {
               mouseLeaveBlur(e);
             }}
-            class="links transition-all duration-500 uppercase text-4xl {$page
-              .route.id == '/'
+            class="links transition-all duration-500 uppercase text-4xl 
+            {$page.url.pathname == '/'
               ? 'italic'
-              : 'not-italic'} "
+              : 'not-italic'}"
             href="/">Home</a
           >
           <a
@@ -244,7 +243,10 @@
             on:mouseleave={(e) => {
               mouseLeaveBlur(e);
             }}
-            class="links transition-all duration-500 uppercase text-4xl"
+            class="links transition-all duration-500 uppercase text-4xl first-letter
+            {$page.url.pathname == '/about'
+              ? 'italic'
+              : 'not-italic'}"
             href="/about">About</a
           >
           <a
@@ -254,7 +256,10 @@
             on:mouseleave={(e) => {
               mouseLeaveBlur(e);
             }}
-            class="links transition-all duration-500 uppercase text-4xl"
+            class="links transition-all duration-500 uppercase text-4xl
+            {$page.url.pathname == '/blog'
+              ? 'italic'
+              : 'not-italic'}"
             href="/blog">Blog</a
           >
         </div>
@@ -270,7 +275,10 @@
             on:mouseleave={(e) => {
               mouseLeaveBlur(e);
             }}
-            class="links transition-all duration-500 uppercase text-4xl"
+            class="links transition-all duration-500 uppercase text-4xl
+            {$page.url.pathname == '/service/web-design-development'
+              ? 'italic'
+              : 'not-italic'}"
             href="/service/web-design-development">Web Development</a
           >
           <a
@@ -280,7 +288,10 @@
             on:mouseleave={(e) => {
               mouseLeaveBlur(e);
             }}
-            class="links transition-all duration-500 uppercase text-4xl"
+            class="links transition-all duration-500 uppercase text-4xl first-letter
+            {$page.url.pathname == '/service/brand-design'
+              ? 'italic'
+              : 'not-italic'}"
             href="/service/brand-design">Branding & Design</a
           >
           <a
@@ -290,7 +301,10 @@
             on:mouseleave={(e) => {
               mouseLeaveBlur(e);
             }}
-            class="links transition-all duration-150 uppercase text-4xl"
+            class="links transition-all duration-150 uppercase text-4xl
+            {$page.url.pathname == '/service/search-engine-optimization'
+              ? 'italic'
+              : 'not-italic'}"
             href="/service/search-engine-optimization">Local & Organic SEO</a
           >
         </div>

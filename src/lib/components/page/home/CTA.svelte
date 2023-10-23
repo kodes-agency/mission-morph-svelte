@@ -63,7 +63,7 @@
           });
           return false;
         }}
-        class="text-xl w-fit text-light-cyan font-bold underline relative"
+        class="tiny text-xl w-fit text-light-cyan font-bold underline relative"
         >{button}</button
       >
     </div>

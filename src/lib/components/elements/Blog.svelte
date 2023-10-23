@@ -12,9 +12,9 @@
     export let readMore: string = ""
 </script>
 
-<a href="/blog/{slug}">
+<a href="/blog/{slug}" class="interactable" data-label="read more">
     {#if Number(id) % 3 === 0 && id != 0 && variation } 
-        <article class="border border-black bg-black flex flex-col ">
+        <article class="border border-black bg-black flex flex-col hover:scale-95 transition-transform duration-500">
             <div class="p-4 w-full flex flex-col justify-between h-full">
                 <div class="pb-10">
                     <div class="flex space-x-3">
@@ -26,12 +26,11 @@
                 </div>
                 <div class=" flex justify-between w-full">
                     <p class="text-white font-serif">{formatDate(date)}</p>
-                    <p class="text-white  underline font-bold">read more</p>
                 </div>
             </div>
         </article>
     {:else}
-        <article class="border bg-white border-black flex flex-col ">
+        <article class="border bg-white border-black flex flex-col hover:scale-95 transition-transform duration-500">
             <img {src} {alt} class="w-full h-60 object-cover">
             <div class="p-4 w-full flex flex-col justify-between h-full">
                 <div class="pb-10">
@@ -51,5 +50,4 @@
             </div>
         </article>
     {/if}
-    
 </a>

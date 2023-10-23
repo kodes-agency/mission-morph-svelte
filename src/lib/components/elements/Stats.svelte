@@ -42,7 +42,7 @@
                 scrollTrigger: {
                     trigger: section,
                     start: "top center",
-                    end: "top top",
+                    end: "center center",
                     scrub: 1
                 },})
     
@@ -50,7 +50,7 @@
                 scrollTrigger: {
                     trigger: section,
                     start: "top center",
-                    end: "top top",
+                    end: "center center",
                     scrub: 1
     
                 },
@@ -64,7 +64,7 @@
                 scrollTrigger: {
                     trigger: section,
                     start: "top center",
-                    end: "top top",
+                    end: "center center",
                     scrub: 1
                 },
                 snap: {
@@ -75,7 +75,7 @@
             tl.from(text, {
                 opacity: 0,
                 duration: 1.5
-            })
+            }, '+=1')
         }, section)
 
         return ()=>{

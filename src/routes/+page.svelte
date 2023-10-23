@@ -29,7 +29,6 @@
 />
 <Services 
     services={data.data.services?.data}
-    heading={page.servicesHeading}
 />
 <CTA 
     heading={page.ctaHeading}

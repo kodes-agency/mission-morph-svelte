@@ -73,11 +73,11 @@
                 opacity: 1
             })
     
-            gsap.from(headingSplit.chars, {
+            gsap.from(headingSplit.lines, {
                 delay: 0.5,
                 yPercent: 100,
                 duration: 2,
-                stagger: 0.02,
+                stagger: 0.2,
                 ease: 'power4.inOut',
             })
         })

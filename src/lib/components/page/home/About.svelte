@@ -28,6 +28,7 @@
 </script>
 
 <section bind:this={sectionEl} class="bg-gradient-to-b from-light-purple to-cyan min-h-screen flex flex-col justify-center items-center">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div class="p-6 max-w-3xl space-y-10 flex flex-col">
         <!-- <div class="relative  w-96 h-72 -mb-[105px] ml-[50px]  lg:-mb-[125px] lg:-ml-[280px]">
             <img data-speed="0.95" class="absolute w-96 h-72" src="{PUBLIC_IMG_URL+images.images[0]?.image?.data[0]?.attributes?.url}" alt="">
@@ -35,8 +36,12 @@
         </div> -->
         <img data-speed="0.95" {src} {alt} class="-mb-[105px] ml-[50px]  lg:-mb-[125px] lg:-ml-[280px] w-60 md:w-80 z-0">
         <h2 bind:this={headingEl} data-speed="1.05" class="text-6xl md:text-8xl font-black text-light-cyan relative z-1">{heading}</h2>
-        <p bind:this={textEl} data-speed="1.05" class="text-light-cyan text-lg max-w-md font-light relative z-1">{content}</p>
-        <a data-speed="1.05" href="/about" class="text-light-cyan underline text-lg md:text-xl font-bold">Read more</a>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+        <p on:click={()=>{ 
+            console.log('click')
+            ScrollSmoother.get().scrollTop(0)}} bind:this={textEl} data-speed="1.05" class="text-light-cyan text-lg max-w-md font-light relative z-1">{content}</p>
+        <a on:click={()=>{ScrollSmoother.get().scrollTop(0)}} data-speed="1.05" href="/about" class="text-light-cyan underline text-lg md:text-xl font-bold tiny">Read more</a>
     </div>
 </section>
      

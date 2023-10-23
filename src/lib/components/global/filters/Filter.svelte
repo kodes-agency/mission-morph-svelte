@@ -9,7 +9,8 @@
   let activeFilters: string[] = [];
 </script>
 
-<div>
+<div class="flex flex-col space-y-5">
+  <h2 class="font-bold text-center text-2xl">Blog categories:</h2>
   {#if $page.url.searchParams.getAll("category").length > 0}
     <div class="flex justify-center space-x-5" transition:fade>
       {#each $page.url.searchParams.getAll("category") as filter}
@@ -29,7 +30,9 @@
               activeFilters.forEach((filter) => {
                 urlSearchParams.append("category", filter);
               });
-              goto(`?${urlSearchParams}`);
+              goto(`?${urlSearchParams}`, {
+                noScroll: true
+              });
               invalidateAll;
             }}
             ><svg
@@ -49,10 +52,10 @@
       {/each}
     </div>
   {/if}
-  <div class="flex justify-center py-5 lg:py-10">
+  <div class="flex justify-center pb-10">
     {#each categories as category}
       <button
-        class="p-2 px-5 lg:px-10 font-serif text-lg"
+        class="p-2 px-5 lg:px-10 font-serif text-lg hover:scale-110 hover:underline transition-all duration-250"
         on:click={() => {
           if (
             urlSearchParams
@@ -73,7 +76,9 @@
               urlSearchParams.append("category", filter);
             });
           }
-          goto(`?${urlSearchParams}`);
+          goto(`?${urlSearchParams}`, {
+            noScroll: true
+          });
           invalidateAll;
         }}>{category.attributes?.category}</button
       >

@@ -6,7 +6,7 @@
   import SplitText from 'gsap/dist/SplitText'
   import Header from "$lib/components/global/Header.svelte";
   import Footer from "$lib/components/global/Footer.svelte";
-  import { afterNavigate } from "$app/navigation";
+  import { afterNavigate, beforeNavigate } from "$app/navigation";
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
 
@@ -26,6 +26,12 @@
 
   onMount(() => {
     // create the scrollSmoother before your scrollTriggers
+    let links = document.querySelectorAll('a')
+    links.forEach((link)=>{
+      link.addEventListener('click', ()=> {
+        ScrollSmoother.get().scrollTop(0)
+      })
+    })
     smoother = ScrollSmoother.create({
       smooth: 1.2, // how long (in seconds) it takes to "catch up" to the native scroll position
       effects: true, // looks for data-speed and data-lag attributes on elements
@@ -73,8 +79,15 @@
     }
   });
 
+
   afterNavigate(()=>{
-    smoother.effects("[data-speed], [data-lag]", {})
+    ScrollSmoother.get().effects("[data-speed], [data-lag]", {})
+    let links = document.querySelectorAll('a')
+    links.forEach((link)=>{
+      link.addEventListener('click', ()=> {
+        ScrollSmoother.get().scrollTop(0)
+      })
+    })
   })
 
 
@@ -102,10 +115,12 @@
   </div>
 </div>
 
-<Header />
-<div id="smooth-wrapper">
-  <div id="smooth-content">
-    <slot />
+<main class="hidden lg:block">
+  <Header />
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <slot />
+      <Footer />
+    </div>
   </div>
-</div>
-<!-- <Footer /> -->
+</main>

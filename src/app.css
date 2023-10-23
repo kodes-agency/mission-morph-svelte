@@ -13,6 +13,18 @@
   }
 }
 
+h1, h2, h3, p {
+  cursor: default;
+}
+
+button p {
+  cursor: pointer;
+}
+
+button h2 {
+  cursor: pointer;
+}
+
 html {
   font-family: "Montserrat", sans-serif;
 }

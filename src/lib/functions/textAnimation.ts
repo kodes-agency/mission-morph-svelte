@@ -7,7 +7,7 @@ let ctx:any
 async function animateText(sectionTarget:HTMLElement ,splitTarget:HTMLElement, fadeTarget?: HTMLElement){
     ctx = await gsap.context(()=>{
         let splitText = new SplitText(splitTarget, {
-            type: 'words,chars'
+            type: 'lines'
         })
 
         new SplitText(splitTarget, {
@@ -28,10 +28,10 @@ async function animateText(sectionTarget:HTMLElement ,splitTarget:HTMLElement, f
             }
         })
 
-        tl.from(splitText.chars, {
+        tl.from(splitText.lines, {
             yPercent: 100,
             opacity: 0.5,
-            duration: 1,
+            duration: 1.5,
             stagger: 0.02,
             ease: 'power2.inOut',
         })
@@ -40,7 +40,7 @@ async function animateText(sectionTarget:HTMLElement ,splitTarget:HTMLElement, f
             tl.from(fadeTarget, {
                 opacity: 0,
                 duration: 1.5,
-            })
+            }, '-=0.7')
         }
     }, sectionTarget)
     return await ctx

@@ -40,7 +40,7 @@
 <div class="accordion-item">
 	<button
 		on:click={handleClick}
-		class="accordion-toggle"
+		class="accordion-toggle tiny"
 		aria-expanded={isOpen}
 		aria-controls="accordion-{componentId}"
 	>
@@ -69,7 +69,7 @@
 				<slot name="footer"/>
 				<button
 					on:click={handleClick}
-					class="accordion-toggle"
+					class="accordion-toggle tiny"
 					aria-expanded={isOpen}
 					aria-controls="accordion-{componentId}"
 				>

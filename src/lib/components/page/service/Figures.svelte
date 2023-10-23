@@ -6,7 +6,6 @@
 </script>
 
 <section id="stats">
-
     {#each stats as stat, i }
         <Stats 
             figure = {stat.number}

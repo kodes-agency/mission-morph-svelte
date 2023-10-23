@@ -11,20 +11,20 @@
   let [minColWidth, maxColWidth, gap] = [300, 400, 30];
   let width: number | undefined;
   let height: number;
-  let blogs: BlogEntity[]
+  let blogs: BlogEntity[];
   $: blogs = data.data.blogs.data;
 </script>
 
-{#if $page.url.searchParams.getAll("category").length == 0 }
-  <Hero 
-    src = {PUBLIC_IMG_URL+data.data.homePage?.data.attributes.blogThumbnail?.data.attributes.url}
-    alt  = {data.data.homePage?.data.attributes.blogThumbnail?.data.attributes.alternativeText}
-    heading  = {data.data.homePage?.data.attributes.blogHeading}
-    content  = {data.data.homePage?.data.attributes.blogContent}
-  />
-{/if}
+<Hero
+  src={PUBLIC_IMG_URL +
+    data.data.homePage?.data.attributes.blogThumbnail?.data.attributes.url}
+  alt={data.data.homePage?.data.attributes.blogThumbnail?.data.attributes
+    .alternativeText}
+  heading={data.data.homePage?.data.attributes.blogHeading}
+  content={data.data.homePage?.data.attributes.blogContent}
+/>
 
-<section class="p-6 pt-20 md:p-20 lg:p-60">
+<section class="p-6 pt-20 md:p-20 lg:px-60 bg-gray">
   <Filter categories={data.data.blogCategories?.data} />
   <Masonry
     items={blogs}

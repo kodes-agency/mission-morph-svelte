@@ -1,16 +1,32 @@
 <script lang="ts">
+  import { animateText, anmCleanUp} from '$lib/functions/textAnimation'
+  import { onMount } from 'svelte';
   export let heading;
   export let content;
   export let button;
+
+  let sectionEl: HTMLElement
+  let headingEl: HTMLElement
+  let textEl: HTMLElement
+
+  onMount(()=>{
+    animateText(sectionEl, headingEl, textEl)
+
+    return()=>{
+      anmCleanUp()
+    }
+  })
 </script>
 
 <section
-  class="h-screen bg-gradient-to-b from-dark-purple to-black flex flex-col items-center justify-center"
+  bind:this={sectionEl}
+  class="h-screen bg-gradient-to-b from-dark-purple to-black flex relative flex-col items-center "
 >
-  <div class="max-w-3xl space-y-10 p-6">
-    <h2 class=" text-medium-purple font-bold text-7xl">{heading}</h2>
-    <p class=" lg:text-lg text-white font-bold uppercase">{content}</p>
-    <div>
+<div class="border-l-2 border-white w-px top-0 left-1/2 h-40 "><p class=""></p></div>
+  <div class="max-w-3xl space-y-10 p-6 pt-20">
+    <h2 bind:this={headingEl} class=" text-medium-purple font-bold text-9xl text-center">{heading}</h2>
+    <p bind:this={textEl} class="lg:text-lg text-white uppercase">{content}</p>
+    <div class="flex items-center pt-10 justify-center">
       <button
         on:click={() => {
           Calendly.initPopupWidget({
@@ -18,7 +34,7 @@
           });
           return false;
         }}
-        class=" text-medium-purple font-bold underline w-fit text-start lg:text-lg"
+        class="text-white border-b-4 border-medium-purple font-bold w-fit lg:text-2xl hover:scale-95 transition-all duration-500"
         >{button}<button />
       </button>
     </div>
