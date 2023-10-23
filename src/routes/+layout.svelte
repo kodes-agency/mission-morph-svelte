@@ -1,30 +1,33 @@
 <script lang="ts">
   import "../app.css";
-  import  gsap  from "gsap/dist/gsap";
-  import  ScrollSmoother  from "gsap/dist/ScrollSmoother";
-  import  ScrollTrigger  from "gsap/dist/ScrollTrigger";
-  import SplitText from 'gsap/dist/SplitText'
+  import  gsap  from "gsap/dist/gsap.js";
+  import  ScrollSmoother  from "gsap/dist/ScrollSmoother.js";
+  import  ScrollTrigger  from "gsap/dist/ScrollTrigger.js";
+  import SplitText from 'gsap/dist/SplitText.js'
   import Header from "$lib/components/global/Header.svelte";
   import Footer from "$lib/components/global/Footer.svelte";
   import { afterNavigate, beforeNavigate } from "$app/navigation";
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
 
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
-
+  if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+  }
+  
   let cursor: HTMLElement
   let cursorLabel: string
   let cursorLabelBold: string
   let spinner: HTMLElement
-
+  
   let smoother: any
   let interacting: any
   let small: any
-
+  
   $: cursor
-
-
+  
+  
   onMount(() => {
+
     // create the scrollSmoother before your scrollTriggers
     let links = document.querySelectorAll('a')
     links.forEach((link)=>{

@@ -11,16 +11,7 @@
   let closeButtonTextWrapper: HTMLElement;
   let links: NodeListOf<HTMLElement>;
   let isOpen = false;
-
-  let toggleMenuTl = gsap.timeline({
-    reversed: true,
-    onStart:()=>{
-      isOpen = true
-    },
-    onReverseComplete:()=>{
-      isOpen = false
-    }
-  });
+  let toggleMenuTl: any;
 
   function initMenuAnimation() {
     toggleMenuTl.reversed(!toggleMenuTl.reversed());
@@ -43,6 +34,17 @@
   }
 
   onMount(() => {
+
+    toggleMenuTl = gsap.timeline({
+      reversed: true,
+      onStart:()=>{
+        isOpen = true
+      },
+      onReverseComplete:()=>{
+        isOpen = false
+      }
+    });
+    
     links = document.querySelectorAll(".links");
     
     const ctx = gsap.context(()=>{

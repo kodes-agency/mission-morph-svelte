@@ -1,6 +1,6 @@
 <script lang="ts">
   import Accordion from "$lib/components/global/accordion/accordion.svelte";
-  import { ScrollSmoother } from 'gsap/dist/ScrollSmoother'
+  import ScrollSmoother from 'gsap/dist/ScrollSmoother'
   import AccordionItem from "$lib/components/global/accordion/accordion-item.svelte";
   import type { ComponentServiceLayoutSubService } from "../../../../__generated__/graphql";
   import { onMount } from "svelte";

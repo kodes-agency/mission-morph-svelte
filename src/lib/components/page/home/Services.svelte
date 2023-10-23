@@ -21,9 +21,6 @@
   let entranceTl: any;
   let toggleTl: any;
 
-  toggleTl = gsap.timeline({
-    revert:true
-  })
 
   
   function toggleService(i: any) {
@@ -41,6 +38,10 @@
 
 
   onMount(() => {
+
+    toggleTl = gsap.timeline({
+      revert:true
+    })
     // @ts-ignore
     serviceDivs = document.querySelectorAll(".service");
     headingEls = document.querySelectorAll(".heading");
