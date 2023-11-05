@@ -37,7 +37,7 @@
               pin: labelEl,
               start: 'top center',
               end: `+=${sectionEl.offsetHeight}`,
-              scrub: "0",
+              scrub: 1,
               onUpdate:(self:any)=>{
                 if(self.progress > 0.9) {
                   gsap.to(labelTextEl, {
