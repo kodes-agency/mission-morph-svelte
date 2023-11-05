@@ -18,6 +18,7 @@
   let cursorLabel: string;
   let cursorLabelBold: string;
   let spinner: HTMLElement;
+  let displayWidth: number
 
   let smoother: any;
   let interacting: any;
@@ -42,6 +43,7 @@
   };
 
   onMount(() => {
+    displayWidth = window.innerWidth
     smoother = ScrollSmoother.create({
       smooth: 1.2, // how long (in seconds) it takes to "catch up" to the native scroll position
       effects: true, // looks for data-speed and data-lag attributes on elements
@@ -88,7 +90,7 @@
 
     let links = document.querySelectorAll("a");
     links.forEach((link) => {
-      if (!link.ariaDisabled) {
+      if (!link.ariaDisabled && displayWidth > 800) {
         link.addEventListener("click", (e) => {
           // if (
           //   e.ctrlKey ||
@@ -111,7 +113,7 @@
     let links = document.querySelectorAll("a");
 
     links.forEach((link) => {
-      if (!link.ariaDisabled) {
+      if (!link.ariaDisabled && displayWidth > 800) {
         link.addEventListener("click", (e) => {
           // if (
           //   e.ctrlKey ||
