@@ -38,8 +38,8 @@
 </section>
 
 <style>
-    :global(.faq-content li{
+    :global(.faq-content li){
         list-style: inside;
         padding-left: 20px;
-    })
+    }
 </style>
