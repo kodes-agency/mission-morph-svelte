@@ -82,6 +82,11 @@
   })
 </script>
 
+<svelte:head>
+  <title>{data.data.blogs.data[0].attributes?.seo?.title}</title>
+  <meta name="description" content={data.data.blogs.data[0].attributes?.seo?.description}>
+</svelte:head>
+
 <main bind:this={sectionEl} class="flex flex-col">
     <section class="flex flex-col py-28 md:py-40">
       <div class="max-w-3xl p-5 lg:p-0 lg:ml-[25vw] space-y-10">
