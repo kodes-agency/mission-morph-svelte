@@ -11,6 +11,8 @@
     export let imgMedium:any
     export let imgSmall:any
 
+    let testEl: HTMLElement
+
     const spinningLarge = [
         { transform: "rotate(0)" },
         { transform: "rotate(360deg)"  },
@@ -64,6 +66,10 @@
                     linesClass: 'headingLines'
                 }
             )
+
+            gsap.set(testEl, {
+                mixBlendMode: "luminosity"
+            })
     
             gsap.set('.headingLines', {
                 overflow: 'hidden'
@@ -94,13 +100,13 @@
         <h1 bind:this={headingEl} data-speed='1.05' class="text-5xl text-center md:text-6xl md:text-start lg:text-8xl font-black opacity-0 transition-all text-light-cyan">{heading}</h1>
         <p class=" text-light-cyan underline text-sm w-full text-center">{scroll}</p>
     </div>
-    <div data-speed="0.90" class="absolute top-16 md:top-20 left-40 md:left-40 z-0 mix-blend-luminosity">
-        <img bind:this={vectorLarge} width="357px" src="{PUBLIC_IMG_URL+imgLarge.url}" alt="{imgLarge.alternativeText}">
+    <div bind:this={testEl} data-speed="0.90" class="absolute top-16 md:top-20 left-10 overflow-hidden w-52 md:w-80 md:left-40 z-0">
+        <img bind:this={vectorLarge} class="" width="357px" src="{PUBLIC_IMG_URL+imgLarge.url}" alt="{imgLarge.alternativeText}">
     </div>
-    <div data-speed="0.92" class="mix-blend-luminosity absolute bottom-28 md:bottom-40 right-40 z-10">
+    <div data-speed="0.92" class="mix-blend-luminosity w-40 absolute bottom-48 md:bottom-40 overflow-hidden right-32 md:right-40 z-10">
         <img bind:this={vectorMedium} width="218px" src="{PUBLIC_IMG_URL+imgMedium.url}" alt="{imgMedium.alternativeText}">
     </div>
-    <div data-speed="0.95" class="mix-blend-luminosity absolute bottom-10 left-72 md:left-96 z-0">
+    <div data-speed="0.95" class="mix-blend-luminosity absolute bottom-10 right-10 w-12 md:w-auto overflow-hidden md:right-auto md:left-96 z-0">
         <img bind:this={vectorSmall} width="97px" src="{PUBLIC_IMG_URL+imgSmall.url}" alt="{imgSmall.alternativeText}">
     </div>
 </section>

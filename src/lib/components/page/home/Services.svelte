@@ -136,6 +136,7 @@
           <a href="/service/{service.attributes?.slug}" class="pointer-events-none lg:pointer-events-auto">
             <!-- in:fade={{ duration: 500 }} -->
             <h2
+              in:fade={{ duration: 500 }}
               class="interactable heading text-3xl absolute top-0 sm:text-5xl md:text-7xl lg:text-8xl font-black text-light-cyan z-20"
               data-labelBold="explore"
               data-label={service.attributes?.homePageCursorLable}
@@ -150,8 +151,8 @@
         {#each services as service, i}
           {#if currentService == i}
           <a href="/service/{service.attributes?.slug}" class="pointer-events-none lg:pointer-events-auto">
-            <!-- transition:blur={{ amount: 1000, duration: 1500, delay: 100 }} -->
             <img
+              transition:blur={{ amount: 1000, duration: 1500, delay: 100 }}
               src={PUBLIC_IMG_URL +
                 service.attributes?.homePageThumbnail?.data?.attributes?.url}
               alt={service.attributes?.homePageThumbnail?.data?.attributes
@@ -200,11 +201,11 @@
       <div class="relative h-40" data-speed="1.05">
         {#each services as service, i}
           {#if currentService == i}
-          <!-- transition:blur={{ amount: 20, duration: 1500 }} -->
-          <div class=" text z-10 absolute top-72 md:top-64 md:left-[40vw] 2xl:left-[30vw]">
+          <div transition:blur={{ amount: 20, duration: 1500 }}
+          class=" z-10 absolute top-72 md:top-64 md:left-[40vw] 2xl:left-[30vw]">
               <a href="/service/{service.attributes?.slug}" class="pointer-events-none lg:pointer-events-auto">
                 <p
-                  class="interactable text-base md:text-lg text-light-cyan w-[90vw] md:w-[350px] pb-10 lg:w-[500px] lg:font-light"
+                  class="interactable text-base md:text-lg text-light-cyan w-[90vw] md:w-[350px] pb-10 pr-5 lg:w-[500px] lg:font-light"
                   data-labelBold="explore"
                   data-label={service.attributes?.homePageCursorLable}
                 >
