@@ -20,7 +20,7 @@
                     {#each segment.segmentQuestion as question }
                         <AccordionItem>
                             <svelte:fragment slot="title">
-                                <h3 class=" text-black font-bold text-xl text-start">
+                                <h3 class=" text-black font-bold md:text-xl text-start">
                                     {question.question}
                                 </h3>
                             </svelte:fragment>

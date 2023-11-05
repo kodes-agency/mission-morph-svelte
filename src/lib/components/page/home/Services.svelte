@@ -134,8 +134,8 @@
         {#each services as service, i}
           {#if currentService == i}
           <a href="/service/{service.attributes?.slug}" class="pointer-events-none lg:pointer-events-auto">
+            <!-- in:fade={{ duration: 500 }} -->
             <h2
-              in:fade={{ duration: 500 }}
               class="interactable heading text-3xl absolute top-0 sm:text-5xl md:text-7xl lg:text-8xl font-black text-light-cyan z-20"
               data-labelBold="explore"
               data-label={service.attributes?.homePageCursorLable}
