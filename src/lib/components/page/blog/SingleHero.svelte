@@ -8,7 +8,7 @@
 </script>
 
 <section class="flex flex-col-reverse lg:flex-col space-y-6 md:space-y-10 min-w-[30vw]">
-    <h1 class="text-4xl md:text-5xl lg:text-5xl font-serif font-medium text-black">{title}</h1>
+    <h1 class="text-3xl md:text-5xl lg:text-5xl font-serif font-medium text-black">{title}</h1>
     <div class="flex py-2 justify-between w-full">
         <p class=" text-base font-serif">{formatDate(date)}</p>
         <span class=" flex space-x-2">

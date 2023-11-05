@@ -10,11 +10,12 @@
     import { onMount } from "svelte";
     export let data
     let page: HomePage = data.data.homePage?.data?.attributes
-
-    onMount(()=>{
-
-    })
 </script>
+
+<svelte:head>
+    <title>{page.seo?.title}</title>
+    <meta name="description" content={page.seo?.description}>
+</svelte:head>
 <Hero 
     heading={page.heroHeading}
     imgLarge={page.heroVercorLarge?.data?.attributes}

@@ -11,7 +11,10 @@
     $:page = data.data.aboutPage.data.attributes
 </script>
 
-
+<svelte:head>
+    <title>{page.seo?.title}</title>
+    <meta name="description" content={page.seo?.description}>
+</svelte:head>
 <Hero 
     heading = {page.heroHeading}
     content = {page.heroContent}

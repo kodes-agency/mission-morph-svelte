@@ -3,6 +3,7 @@
 	import { getAccordionOptions } from './context'
 	import { v4 as uuidv4 } from 'uuid';
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+  	import { beforeNavigate } from '$app/navigation';
 
 
 	// by default the accordion item is closed

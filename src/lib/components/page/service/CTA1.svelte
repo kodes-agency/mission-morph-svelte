@@ -2,6 +2,7 @@
   import ScrollSmoother from 'gsap/dist/ScrollSmoother'
   import { animateText, anmCleanUp } from '$lib/functions/textAnimation'
   import { onMount } from 'svelte';
+  import { beforeNavigate } from '$app/navigation';
   export let color: string | undefined;
 
   let interval = setInterval(countDown, 1000);
@@ -29,6 +30,14 @@
   onMount(()=>{
       smoother = ScrollSmoother.get()
       animateText(sectionEl, headingEl, fadeEl)
+
+      return ()=>{
+        anmCleanUp()
+      }
+  })
+
+  beforeNavigate(()=>{
+    currentCount = countDownStart
   })
 
 

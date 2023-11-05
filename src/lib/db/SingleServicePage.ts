@@ -54,7 +54,6 @@ export default function () {
             homePageTitle
             seo {
               title
-              keywords
               description
             }
             statistics {

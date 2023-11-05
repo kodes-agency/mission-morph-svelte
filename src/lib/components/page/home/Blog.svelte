@@ -38,7 +38,7 @@
 
 </script>
 
-<section bind:this={sectionEl} class="min-h-[200vh] bg-black lg:p-10">
+<section bind:this={sectionEl} class="min-h-[200vh] bg-black p-3 lg:p-10">
     <div class="h-screen flex flex-col items-center justify-center relative p-6">
       <img
         data-speed="0.95"
@@ -57,7 +57,7 @@
         </p>
       </div>
     </div>
-  <div class="min-h-screen p-10 md:p-20 ">
+  <div class="min-h-screen p-5 lg:p-10 md:p-20 ">
     <Masonry
       items={blogs}
       {minColWidth}

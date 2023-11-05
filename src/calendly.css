@@ -28,9 +28,9 @@
   right: 0;
   bottom: 0;
   overflow: hidden;
-  z-index: 40;
+  z-index: 1000;
   background-color: #a5a5a5;
-  background-color: rgba(31, 31, 31, 0.8);
+  background-color: rgba(31, 31, 31, 1);
 }
 .calendly-overlay .calendly-close-overlay {
   position: absolute;
@@ -72,7 +72,7 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  color: #fff;
+  fill: #fff;
   width: 19px;
   height: 19px;
   cursor: pointer;

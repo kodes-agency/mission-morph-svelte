@@ -32,7 +32,7 @@
 
   <section
     bind:this={sectionEl}
-    class="bg-gradient-to-b from-magenta to-yellow h-screen flex flex-col items-center justify-center"
+    class="bg-gradient-to-b from-magenta to-yellow flex flex-col items-center justify-center"
   >
     <div
       class="relative max-w-5xl flex space-y-4 flex-col justify-between h-full p-6 my-40"

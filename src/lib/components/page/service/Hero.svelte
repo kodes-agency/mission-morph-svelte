@@ -1,9 +1,10 @@
 <script lang="ts">
+  import { beforeNavigate } from "$app/navigation";
     import type { Maybe } from "../../../../__generated__/graphql";
     import ScrollSmoother from 'gsap/dist/ScrollSmoother'
     import SplitText from 'gsap/dist/SplitText'
     import gsap from 'gsap/dist/gsap'
-    import { onMount } from "svelte";
+    import { afterUpdate, onMount } from "svelte";
     export let heading: Maybe<string> | undefined
     export let content: Maybe<string> | undefined
     export let alt: Maybe<string> | undefined
@@ -14,74 +15,151 @@
 
     let categoryEl: HTMLElement,
         headingEl: HTMLElement,
-        textEl: HTMLElement
+        textEl: HTMLElement,
+        ctx: any
+
+        $: categoryEl, headingEl, textEl, ctx
 
 
     onMount(()=>{
+        console.log("object mounted")
         let smoother = ScrollSmoother.get()
+        
+        // ctx = gsap.context(()=>{
+        //     let heroTl = gsap.timeline({
+        //         onComplete: ()=>{
+        //             headingSplit.revert()
+        //         }
+        //     })
 
-        const ctx = gsap.context(()=>{
-            let heroTl = gsap.timeline()
+        //     let headingSplit = new SplitText(headingEl, {
+        //             type: 'lines',
+        //         }
+        //     )
 
-            let headingSplit = new SplitText(headingEl, {
-                    type: 'lines',
-                }
-            )
-            new SplitText(headingEl, {
-                    type: 'lines',
-                    linesClass: 'headingLines'
-                }
-            )
+        //     new SplitText(headingEl, {
+        //             type: 'lines',
+        //             linesClass: 'headingLines'
+        //         }
+        //     )
     
-            gsap.set('.headingLines', {
-                overflow: 'hidden',
-                lineHeight: '1.1'
-            })
+        //     gsap.set('.headingLines', {
+        //         overflow: 'hidden',
+        //         lineHeight: '1.1'
+        //     })
     
-            gsap.set(headingEl, {
-                opacity: 1
-            })
+        //     gsap.set(headingEl, {
+        //         opacity: 1
+        //     })
 
-            let categorySplit = new SplitText(categoryEl, {
-                    type: 'lines',
-                }
-            )
-            new SplitText(categoryEl, {
-                    type: 'lines',
-                    linesClass: 'categoryLines'
-                }
-            )
+        //     let categorySplit = new SplitText(categoryEl, {
+        //             type: 'lines',
+        //         }
+        //     )
+        //     new SplitText(categoryEl, {
+        //             type: 'lines',
+        //             linesClass: 'categoryLines'
+        //         }
+        //     )
     
-            gsap.set('.categoryLines', {
-                overflow: 'hidden',
-                lineHeight: '1.1'
-            })
+        //     gsap.set('.categoryLines', {
+        //         overflow: 'hidden',
+        //         lineHeight: '1.1'
+        //     })
     
-            gsap.set(headingEl, {
-                opacity: 1
-            })
+        //     gsap.set(headingEl, {
+        //         opacity: 1
+        //     })
 
-            heroTl.from(categorySplit.lines, {
-                delay: 0.5,
-                yPercent: 100,
-                duration: 1.5,
-                stagger: 0.01,
-                ease: 'power4.inOut',
-            })
+        //     heroTl.from(categorySplit.lines, {
+        //         delay: 0.5,
+        //         yPercent: 100,
+        //         duration: 1.5,
+        //         stagger: 0.01,
+        //         ease: 'power4.inOut',
+        //     })
     
-            heroTl.from(headingSplit.lines, {
-                yPercent: 100,
-                duration: 1.5,
-                stagger: 0.01,
-                ease: 'power4.inOut',
-            },'-=1.4')
-        })
+        //     heroTl.from(headingSplit.lines, {
+        //         yPercent: 100,
+        //         duration: 1.5,
+        //         stagger: 0.01,
+        //         ease: 'power4.inOut',
+        //     },'-=1.4')
+        // })
 
-        return ()=>{
-            ctx.revert()
-        }
+        // return ()=>{
+        //     ctx.revert()
+        // }
     })
 
+    afterUpdate(()=>{  
+        // let heading = document.getElementById('heading')
+        // let category = document.getElementById('category')
+        // console.log(heading?.innerText)
+
+        // ctx = gsap.context(()=>{
+        //     let heroTl = gsap.timeline({
+        //     })
+
+        //     let headingSplit =  new SplitText(heading, {
+        //             type: 'lines',
+        //         }
+        //     )
+
+        //     new SplitText(headingEl, {
+        //             type: 'lines',
+        //             linesClass: 'headingLines'
+        //         }
+        //     )
+    
+        //     gsap.set('.headingLines', {
+        //         overflow: 'hidden',
+        //         lineHeight: '1.1'
+        //     })
+    
+        //     gsap.set(headingEl, {
+        //         opacity: 1
+        //     })
+
+        //     let categorySplit = new SplitText(category, {
+        //             type: 'lines',
+        //         }
+        //     )
+        //     new SplitText(categoryEl, {
+        //             type: 'lines',
+        //             linesClass: 'categoryLines'
+        //         }
+        //     )
+    
+        //     gsap.set('.categoryLines', {
+        //         overflow: 'hidden',
+        //         lineHeight: '1.1'
+        //     })
+    
+        //     gsap.set(headingEl, {
+        //         opacity: 1
+        //     })
+
+        //     heroTl.from(categorySplit.lines, {
+        //         delay: 0.5,
+        //         yPercent: 100,
+        //         duration: 1.5,
+        //         stagger: 0.01,
+        //         ease: 'power4.inOut',
+        //     })
+    
+        //     heroTl.from(headingSplit.lines, {
+        //         yPercent: 100,
+        //         duration: 1.5,
+        //         stagger: 0.01,
+        //         ease: 'power4.inOut',
+        //     },'-=1.4')
+        // })
+    })
+
+    // beforeNavigate(()=>{
+    //     ctx.revert()
+    // })
 
     const colors = {
         seoText: 'text-seo-text-color',
@@ -98,11 +176,11 @@
     <div data-speed="1.05" class="flex flex-col justify-between h-full max-w-5xl relative z-10 py-10">
         <div></div>
         <div class="flex flex-col space-y-10 p-6">
-            <span bind:this={categoryEl} class="flex space-x-2">
+            <span bind:this={categoryEl} id="category" class="flex space-x-2">
                 <p class="uppercase font-bold text-sm md:text-lg text-{color}-text-color">services:// </p>
                 <p class="uppercase font-bold text-sm md:text-lg text-white">{category}</p>
             </span>
-            <h1 bind:this={headingEl}  class="text-3xl md:text-5xl lg:text-8xl leading-[1.2] font-black text-white">{heading}</h1>
+            <h1 bind:this={headingEl} id="heading" class="text-3xl md:text-5xl lg:text-7xl uppercase leading-[1.2] font-black text-white">{heading}</h1>
             <p bind:this={textEl} class="text-white md:text-lg max-w-3xl">{content}</p>
         </div>
         <p class=" text-{color}-text-color underline text-sm w-full text-center pt-20">{scroll}</p>

@@ -22,8 +22,8 @@
   bind:this={sectionEl}
   class="h-screen bg-gradient-to-b from-dark-purple to-black flex relative flex-col items-center "
 >
-<div class="border-l-2 border-white w-px top-0 left-1/2 h-40 "><p class=""></p></div>
-  <div class="max-w-3xl space-y-10 p-6 pt-20">
+<div class="hidden lg:static border-l-2 border-white w-px top-0 absolute left-1/2 h-40 "><p class=""></p></div>
+  <div class="max-w-3xl space-y-10 p-6 pt-20 z-20">
     <h2 bind:this={headingEl} class=" text-medium-purple font-bold text-9xl text-center">{heading}</h2>
     <p bind:this={textEl} class="lg:text-lg text-white uppercase">{content}</p>
     <div class="flex items-center pt-10 justify-center">

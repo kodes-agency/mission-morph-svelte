@@ -17,10 +17,13 @@ export default function () {
             slug
             seo {
               description
-              keywords
               title
             }
             publishedAt
+            author
+            shortSummary
+            ctaHeading
+            ctaButton
             thumbnail {
               data {
                 attributes {
@@ -33,6 +36,37 @@ export default function () {
           }
         }
       }
+      homePage {
+        data {
+          attributes {
+            blogs {
+              data {
+                id
+                attributes {
+                  title
+                  slug
+                  thumbnail {
+                    data {
+                      attributes {
+                        alternativeText
+                        url
+                      }
+                    }
+                  }
+                  publishedAt
+                  blogCategories {
+                    data {
+                      attributes {
+                        category
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }  
     }
   `;
 

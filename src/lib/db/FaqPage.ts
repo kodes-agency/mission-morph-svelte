@@ -2,10 +2,14 @@ import { gql } from "@apollo/client/core/index.js";
 
 export default function () {
   const query = gql`
-    query AboutPage {
-      aboutPage {
+    query faqPage {
+      faqPage {
         data {
           attributes {
+            seo {
+              title
+              description
+            }
             heroHeading
             heroContent
             heroThumbnail {
@@ -16,17 +20,12 @@ export default function () {
                 }
               }
             }
-            ctaHeading
-            ctaContent
-            ctaButton
-            seo {
-              description
-              title
-            }
-            step {
-              content
-              title
-              id
+            faqSegment {
+              segmentTitle
+              segmentQuestion {
+                question
+                content
+              }
             }
           }
         }

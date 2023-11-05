@@ -61,10 +61,10 @@
   <img
     {src}
     {alt}
-    class="absolute top-0 left-0 h-screen w-full object-cover z-0 mix-blend-darken"
-    data-speed="0.9"
+    class="absolute top-0 left-0 h-screen w-full object-cover z-10 mix-blend-darken"
+    data-speed="0.1"
   />
-  <div class="flex flex-col max-w-5xl relative z-10 p-6 py-10 space-y-4">
+  <div class="flex flex-col max-w-5xl relative z-20 p-6 py-10 space-y-4">
     <h1 data-speed="1.05" bind:this={headingEl} class="text-4xl md:text-8xl font-black text-light-cyan">{@html heading}</h1>
     <p data-speed="1.05" bind:this={textEl} class="text-white text-lg max-w-3xl">{content}</p>
   </div>

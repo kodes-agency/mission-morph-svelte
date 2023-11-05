@@ -98,7 +98,6 @@ export default function () {
             }
             servicesHeading
             seo {
-              keywords
               title
               description
             }
