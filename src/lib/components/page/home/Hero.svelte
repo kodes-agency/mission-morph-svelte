@@ -88,20 +88,20 @@
     })
 </script>
 
-<section class=" bg-gradient-to-b from-dark-purple to-light-purple h-screen flex flex-col items-center justify-center p-6 md:p-10 relative">
-    <div class="flex flex-col justify-between h-full max-w-5xl relative z-10">
+<section class=" bg-gradient-to-b from-dark-purple to-light-purple h-screen flex flex-col items-center justify-center p-6 md:p-10 relative z-0">
+    <div class="flex flex-col justify-between h-full max-w-5xl relative z-20">
         <div></div>
         <h1 bind:this={headingEl} data-speed='1.05' class="text-5xl text-center md:text-6xl md:text-start lg:text-8xl font-black opacity-0 transition-all text-light-cyan">{heading}</h1>
         <p class=" text-light-cyan underline text-sm w-full text-center">{scroll}</p>
     </div>
     <div data-speed="0.90" class="absolute top-16 md:top-20 left-40 md:left-40 z-0 mix-blend-luminosity">
-        <img bind:this={vectorLarge} src="{PUBLIC_IMG_URL+imgLarge.url}" alt="{imgLarge.alternativeText}">
+        <img bind:this={vectorLarge} width="357px" src="{PUBLIC_IMG_URL+imgLarge.url}" alt="{imgLarge.alternativeText}">
     </div>
-    <div data-speed="0.92" class="mix-blend-luminosity absolute bottom-28 md:bottom-40 right-40 z-0">
-        <img bind:this={vectorMedium} src="{PUBLIC_IMG_URL+imgMedium.url}" alt="{imgMedium.alternativeText}">
+    <div data-speed="0.92" class="mix-blend-luminosity absolute bottom-28 md:bottom-40 right-40 z-10">
+        <img bind:this={vectorMedium} width="218px" src="{PUBLIC_IMG_URL+imgMedium.url}" alt="{imgMedium.alternativeText}">
     </div>
     <div data-speed="0.95" class="mix-blend-luminosity absolute bottom-10 left-72 md:left-96 z-0">
-        <img bind:this={vectorSmall} src="{PUBLIC_IMG_URL+imgSmall.url}" alt="{imgSmall.alternativeText}">
+        <img bind:this={vectorSmall} width="97px" src="{PUBLIC_IMG_URL+imgSmall.url}" alt="{imgSmall.alternativeText}">
     </div>
 </section>
     
