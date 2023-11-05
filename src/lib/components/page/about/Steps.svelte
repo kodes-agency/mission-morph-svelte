@@ -30,7 +30,7 @@
         
         let tlLabelText = gsap.timeline()
 
-        mm.add('(max-width: 1024px)', ()=>{
+        // mm.add('(max-width: 1024px)', ()=>{
           let tlLabel = gsap.timeline({
             scrollTrigger: {
               target: sectionEl,
@@ -120,98 +120,98 @@
               duration: 1.5,
             }, '-=0.5')
           })
-        })
+        
 
-        mm.add('(min-width: 1025px)', ()=>{
-          let tlLabel = gsap.timeline({
-            scrollTrigger: {
-              target: sectionEl,
-              pin: labelEl,
-              start: 'top center',
-              end: `+=${sectionEl.offsetHeight - 80}`,
-              scrub: 1,
-              onUpdate:(self:any)=>{
-                if(self.progress > 0.9) {
-                  gsap.to(labelTextEl, {
-                    innerText: "success",
-                    fontWeight: "bold"
-                  }) 
-                } else {
-                  gsap.to(labelTextEl, {
-                    fontWeight: "normal",
-                    innerText: "project",
-                  }) 
-                }
-              }
-            }
-          })
+        // mm.add('(min-width: 1025px)', ()=>{
+        //   let tlLabel = gsap.timeline({
+        //     scrollTrigger: {
+        //       target: sectionEl,
+        //       pin: labelEl,
+        //       start: 'top center',
+        //       end: `+=${sectionEl.offsetHeight - 80}`,
+        //       scrub: 1,
+        //       onUpdate:(self:any)=>{
+        //         if(self.progress > 0.9) {
+        //           gsap.to(labelTextEl, {
+        //             innerText: "success",
+        //             fontWeight: "bold"
+        //           }) 
+        //         } else {
+        //           gsap.to(labelTextEl, {
+        //             fontWeight: "normal",
+        //             innerText: "project",
+        //           }) 
+        //         }
+        //       }
+        //     }
+        //   })
   
-          tlLabel.to(labelEl, {
-            scale: 1.4,
-            borderRadius: '40px',
-            rotation: 360
-          }, 0)
+        //   tlLabel.to(labelEl, {
+        //     scale: 1.4,
+        //     borderRadius: '40px',
+        //     rotation: 360
+        //   }, 0)
   
-          tlLabel.to(labelTextEl, {
-            scale: 1,
-            rotation: -360
-          }, 0)
+        //   tlLabel.to(labelTextEl, {
+        //     scale: 1,
+        //     rotation: -360
+        //   }, 0)
 
-          stepsEl.forEach((step, i)=>{
-            let tl = gsap.timeline({
-              scrollTrigger:{
-                trigger: step,
-                start: 'top center',
-                end: 'top +=100',
-                scrub: 1,
-              }
-            })
+        //   stepsEl.forEach((step, i)=>{
+        //     let tl = gsap.timeline({
+        //       scrollTrigger:{
+        //         trigger: step,
+        //         start: 'top center',
+        //         end: 'top +=100',
+        //         scrub: 1,
+        //       }
+        //     })
 
-            let textSplit = new SplitText(`#heading-${i}`, {
-              type: 'lines, words, chars',
-            })
+        //     let textSplit = new SplitText(`#heading-${i}`, {
+        //       type: 'lines, words, chars',
+        //     })
 
-            new SplitText(`#heading-${i}`, {
-              type: 'lines, words, chars',
-              linesClass: 'lineClass',
-            })
+        //     new SplitText(`#heading-${i}`, {
+        //       type: 'lines, words, chars',
+        //       linesClass: 'lineClass',
+        //     })
             
-            let numberSplit = new SplitText(`#number-${i}`, {
-              type: 'lines, words'
-            })
+        //     let numberSplit = new SplitText(`#number-${i}`, {
+        //       type: 'lines, words'
+        //     })
             
-            new SplitText(`#number-${i}`, {
-              type: 'lines, words',
-              linesClass: 'lineClass'
-            })
+        //     new SplitText(`#number-${i}`, {
+        //       type: 'lines, words',
+        //       linesClass: 'lineClass'
+        //     })
             
-            gsap.set('.lineClass', {
-              overflow: 'hidden'
-            })
+        //     gsap.set('.lineClass', {
+        //       overflow: 'hidden'
+        //     })
 
-            tl.from(numberSplit.words, {
-              yPercent: 100,
-              opacity: 0.5,
-              duration: 1.5,
-              stagger: 0.02,
-              ease: 'power2.inOut',
-            })
+        //     tl.from(numberSplit.words, {
+        //       yPercent: 100,
+        //       opacity: 0.5,
+        //       duration: 1.5,
+        //       stagger: 0.02,
+        //       ease: 'power2.inOut',
+        //     })
 
-            tl.from(textSplit.words, {
-              yPercent: 100,
-              opacity: 0.5,
-              duration: 1.5,
-              stagger: 0.02,
-              ease: 'power2.inOut'
-            })
+        //     tl.from(textSplit.words, {
+        //       yPercent: 100,
+        //       opacity: 0.5,
+        //       duration: 1.5,
+        //       stagger: 0.02,
+        //       ease: 'power2.inOut'
+        //     })
 
 
-            tl.from(`#text-${i}`, {
-              opacity: 0,
-              duration: 1.5,
-            }, '-=1')
-          })
-        })
+        //     tl.from(`#text-${i}`, {
+        //       opacity: 0,
+        //       duration: 1.5,
+        //     }, '-=1')
+        //   })
+        // })
     
       // gsap.to(sectionEl, {
       //   xPercent: -100 * (sections.length + 1),
@@ -255,10 +255,10 @@
         >
           <div class="flex flex-col max-w-lg relative z-10 space-y-4">
             <div class="flex flex-col space-y-4 {i % 2 == 0 ? "lg:items-end" : "lg:items-start"}">
-              <p id="number-{i}" class="text-5xl sm:text-8xl lg:text-9xl font-black text-light-cyan flex space-x-2 ">{step.id}.</p>
+              <p id="number-{i}" class="text-8xl lg:text-9xl font-black text-light-cyan flex space-x-2 ">{step.id}.</p>
               <h2 id="heading-{i}" class=" text-2xl sm:text-3xl font-black text-light-cyan  ">{step.title}</h2>
             </div>
-            <p id="text-{i}" class="text-white text-sm md:text-lg max-w-3xl">{step.content}</p>
+            <p id="text-{i}" class="text-white text-base md:text-lg max-w-3xl">{step.content}</p>
           </div>
         </div>
       {/each}

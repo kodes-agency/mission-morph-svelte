@@ -58,7 +58,7 @@
 </script>
 
 <section
-  class=" bg-gradient-to-b from-black to-green h-screen flex flex-col items-center justify-center relative overflow-hidden"
+  class=" bg-gradient-to-b from-black to-green h-screen flex flex-col items-center justify-center relative"
 >
   <img
     {src}

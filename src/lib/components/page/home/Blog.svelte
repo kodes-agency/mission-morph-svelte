@@ -22,9 +22,11 @@
   let sectionEl: HTMLElement
   let headingEl: HTMLElement
   let textEl: HTMLElement
+  let displayWidth: number
 
 
   onMount(()=>{
+    displayWidth = window.innerWidth
     let smoother = ScrollSmoother.get();
     let ctx = animateText(sectionEl, headingEl, textEl)
 
@@ -77,6 +79,7 @@
         id={item.id}
         slug={item.attributes?.slug}
         variation={false}
+        readMore={displayWidth < 1024 ? "Read more" : ""}
       />
     </div>
     </Masonry>

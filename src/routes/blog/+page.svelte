@@ -6,13 +6,19 @@
   import Filter from "$lib/components/global/filters/Filter.svelte";
   import Hero from "$lib/components/page/blog/Hero.svelte";
   import { page } from "$app/stores";
+  import { onMount } from "svelte";
 
   export let data;
+  let displayWidth: number
   let [minColWidth, maxColWidth, gap] = [300, 400, 30];
   let width: number | undefined;
   let height: number;
   let blogs: BlogEntity[];
   $: blogs = data.data.blogs.data;
+
+  onMount(()=>{
+    displayWidth = window.innerWidth
+  })
 </script>
 
 <Hero
@@ -44,6 +50,7 @@
       id={item.id}
       slug={item.attributes?.slug}
       variation={true}
+      readMore={displayWidth < 1024 ? "Read more" : ""}
     />
   </Masonry>
 </section>

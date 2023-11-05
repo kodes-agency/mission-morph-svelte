@@ -100,6 +100,7 @@
       gsap.set(".splitHeadingClass", {
         overflow: "hidden",
       });
+      
       entranceTl.from(
         splitText.lines,
         {
@@ -152,7 +153,8 @@
           {#if currentService == i}
           <a href="/service/{service.attributes?.slug}" class="pointer-events-none lg:pointer-events-auto">
             <img
-              transition:blur={{ amount: 1000, duration: 1500, delay: 100 }}
+              in:blur={{ amount: 1000, duration: 1500}}
+              out:blur={{ amount: 1000, duration: 1500}}
               src={PUBLIC_IMG_URL +
                 service.attributes?.homePageThumbnail?.data?.attributes?.url}
               alt={service.attributes?.homePageThumbnail?.data?.attributes
