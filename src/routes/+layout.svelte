@@ -133,6 +133,14 @@
 
 <svelte:head>
   <meta name="robots" content="noindex" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E01M0L9W91"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E01M0L9W91');
+  </script>
 </svelte:head>
 
 <div
