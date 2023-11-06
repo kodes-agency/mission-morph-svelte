@@ -9,7 +9,7 @@
   import { afterNavigate, beforeNavigate } from "$app/navigation";
   import { onMount } from "svelte";
   import { fade, blur } from "svelte/transition";
-  import GoogleTag from "$lib/components/global/GoogleTag.svelte";
+  import { page } from "$app/stores";
 
   if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
@@ -43,7 +43,30 @@
     });
   };
 
+  $: {
+      // @ts-ignore
+      if (typeof gtag !== "undefined") {
+          // @ts-ignore
+          gtag("config", "G-E01M0L9W91", {
+              page_title: document.title,
+              page_path: $page.url.pathname,
+          });
+          // @ts-ignore
+          gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied'
+          });
+
+          // @ts-ignore
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+          });
+      }
+  }
+
   onMount(() => {
+
     displayWidth = window.innerWidth
     smoother = ScrollSmoother.create({
       smooth: 1.2, // how long (in seconds) it takes to "catch up" to the native scroll position
@@ -136,7 +159,6 @@
   <meta name="robots" content="noindex" />
 </svelte:head>
 
-<GoogleTag/>
 
 <div
   id="cursor"

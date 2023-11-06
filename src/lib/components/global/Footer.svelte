@@ -15,7 +15,7 @@
         <div class="flex flex-col space-y-1 md:space-y-0">
             <p class=" uppercase font-bold text-medium-purple text-xl">Pages://</p>
             <a href="/" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Home</a>
-            <a href="/about" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Abouts us</a>
+            <a href="/about" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">About us</a>
             <a href="/blog" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Blog</a>
             <a href="/faq" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">FAQ</a>
         </div>
@@ -27,9 +27,10 @@
         </div>
         <div class="flex flex-col space-y-1 md:space-y-0">
             <p class=" uppercase font-bold text-medium-purple text-xl">Social://</p>
-            <a href="/" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">LinkedIn</a>
-            <a href="/" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Facebook</a>
-            <a href="/" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Instagram</a>
+            <a href="https://www.instagram.com/missionmorphofficial/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Twitter</a>
+            <a href="https://www.linkedin.com/in/mission-morph-584b09283/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">LinkedIn</a>
+            <a href="/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Facebook</a>
+            <a href="https://www.instagram.com/missionmorphofficial/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Instagram</a>
         </div>
         <div class="flex flex-col space-y-1 md:space-y-0">
             <p class=" uppercase font-bold text-medium-purple text-xl">Contact://</p>
