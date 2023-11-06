@@ -9,6 +9,7 @@
   import { afterNavigate, beforeNavigate } from "$app/navigation";
   import { onMount } from "svelte";
   import { fade, blur } from "svelte/transition";
+  import GoogleTag from "$lib/components/global/GoogleTag.svelte";
 
   if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
@@ -133,15 +134,9 @@
 
 <svelte:head>
   <meta name="robots" content="noindex" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E01M0L9W91"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-E01M0L9W91');
-  </script>
 </svelte:head>
+
+<GoogleTag/>
 
 <div
   id="cursor"
@@ -184,3 +179,4 @@
     <Footer />
   </div>
 </div>
+``
