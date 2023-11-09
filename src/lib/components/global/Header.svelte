@@ -145,7 +145,7 @@
       ? ''
       : 'w-[33vw]'} h-fit fixed top-5 md:top-10 z-50 left-5 md:left-10 lg:left-20 mix-blend-difference"
   >
-    <a href="/">
+    <a aria-label="Home page" href="/">
       <svg
         class="w-7 md:w-auto"
         width="31"
@@ -165,7 +165,7 @@
   <div
     class="justify-center pt-3 fixed top-4 md:top-10 z-50 left-1/2 -translate-x-1/2 mix-blend-difference"
   >
-    <a href="/" class="tiny">
+    <a aria-label="Home page" href="/" class="tiny">
       <svg
         class="w-48 md:w-auto"
         width="203"

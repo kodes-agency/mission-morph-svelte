@@ -148,7 +148,7 @@
       </div>
       <div data-speed="0.95" class="z-0 relative">
         {#each services as service, i}
-          <a href="/service/{service.attributes?.slug}" class="pointer-events-none lg:pointer-events-auto">
+          <a aria-label="{service.attributes?.homePageCursorLable} page" href="/service/{service.attributes?.slug}" class="pointer-events-none lg:pointer-events-auto">
             <img
               in:blur={{ amount: 1000, duration: 1500}}
               out:blur={{ amount: 1000, duration: 1500}}

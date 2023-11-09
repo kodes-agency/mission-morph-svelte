@@ -2,7 +2,7 @@
     import gsap from 'gsap/dist/gsap'
     import ScrollTrigger from 'gsap/dist/ScrollTrigger'
     import ScrollSmoother from 'gsap/dist/ScrollSmoother'
-    import { onMount } from 'svelte';
+    import { afterUpdate, onMount } from 'svelte';
 
     export let figure: number = 55
     export let contet: string | undefined
@@ -37,6 +37,7 @@
         const ctx = gsap.context(()=>{
             let dots = gsap.utils.toArray(`.dots-${id}`)
             let smoother = ScrollSmoother.get()
+            ScrollTrigger.refresh(true)
     
             let tl = gsap.timeline({            
                 scrollTrigger: {

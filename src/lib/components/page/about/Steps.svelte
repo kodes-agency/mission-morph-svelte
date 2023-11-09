@@ -244,23 +244,24 @@
 </script>
 
 
-  <section bind:this={sectionEl} class="bg-gradient-to-b from-green relative to-dark-purple flex flex-col min-h-screen z-10">
-    <div bind:this={labelEl} class="bg-light-cyan text-xs  absolute top-0 left-12 sm:left-24 lg:left-1/2 -translate-x-1/2 z-20 w-16 h-16 lg:w-20 lg:h-20  flex  items-center justify-center "><p bind:this={labelTextEl}>project</p></div>
-    <div bind:this={fixedEl} class="border-l-2 border-white w-px absolute top-0 left-12 sm:left-24 lg:left-1/2 -translate-x-1/2 z-10 h-full "><p class=""></p></div>
-    <div class="flex flex-col w-full pl-28 sm:pl-60 pr-5 py-20 lg:px-20 lg:py-20 relative z-40">
-
-      {#each steps as step, i}
-        <div
-          class="step flex flex-col py-10 w-fit {i % 2 == 0 ? "lg:mr-auto lg:text-end" : "lg:ml-auto lg:text-start"}"
-        >
-          <div class="flex flex-col max-w-lg relative z-10 space-y-4">
-            <div class="flex flex-col space-y-4 {i % 2 == 0 ? "lg:items-end" : "lg:items-start"}">
-              <p id="number-{i}" class="text-8xl lg:text-9xl font-black text-light-cyan flex space-x-2 z-0">{step.id}.</p>
-              <h2 id="heading-{i}" class=" text-2xl uppercase sm:text-3xl font-black text-light-cyan z-0">{step.title}</h2>
+  <section bind:this={sectionEl} class="bg-gradient-to-b from-green to-dark-purple flex flex-col min-h-screen z-20">
+    <div class="relative">
+      <div bind:this={labelEl} class="bg-light-cyan text-xs  absolute top-0 left-12 sm:left-24 lg:left-1/2 -translate-x-1/2 z-20 w-16 h-16 lg:w-20 lg:h-20  flex  items-center justify-center "><p bind:this={labelTextEl}>project</p></div>
+      <div bind:this={fixedEl} class="border-l-2 border-white w-px absolute top-0 left-12 sm:left-24 lg:left-1/2 -translate-x-1/2 z-10 h-full "><p class=""></p></div>
+      <div class="flex flex-col w-full pl-28 sm:pl-60 pr-5 py-20 lg:px-20 lg:py-20 relative">
+        {#each steps as step, i}
+          <div
+            class="step flex flex-col py-10 w-fit {i % 2 == 0 ? "lg:mr-auto lg:text-end" : "lg:ml-auto lg:text-start"}"
+          >
+            <div class="flex flex-col max-w-lg relative z-30 space-y-4">
+              <div class="flex flex-col space-y-4 {i % 2 == 0 ? "lg:items-end" : "lg:items-start"}">
+                <p id="number-{i}" class="text-8xl lg:text-9xl font-black text-light-cyan flex space-x-2 z-0">{step.id}.</p>
+                <h2 id="heading-{i}" class=" text-2xl uppercase sm:text-3xl font-black text-light-cyan z-0">{step.title}</h2>
+              </div>
+              <p id="text-{i}" class="text-white text-base md:text-lg max-w-3xl z-0">{step.content}</p>
             </div>
-            <p id="text-{i}" class="text-white text-base md:text-lg max-w-3xl z-0">{step.content}</p>
           </div>
-        </div>
-      {/each}
+        {/each}
+      </div>
     </div>
   </section>

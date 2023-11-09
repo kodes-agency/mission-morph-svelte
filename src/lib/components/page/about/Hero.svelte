@@ -63,7 +63,7 @@
   <img
     {src}
     {alt}
-    class="absolute top-0 left-0 h-screen w-full object-cover z-10 mix-blend-darken"
+    class="absolute top-0 left-0 h-screen w-full object-cover z-20 mix-blend-darken"
     data-speed="{displayWidth < 1024 ? "0.95" : "0.2"}"
   />
   <div class="flex flex-col max-w-5xl relative z-20 p-6 py-10 space-y-4">
