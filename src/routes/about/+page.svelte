@@ -3,13 +3,17 @@
     import Hero from '$lib/components/page/about/Hero.svelte';
     import Steps from '$lib/components/page/about/Steps.svelte';
     import CTA from '$lib/components/page/about/CTA.svelte';
+    import ScrollSmoother from 'gsap/dist/ScrollSmoother'
 
     import { PUBLIC_IMG_URL } from '$env/static/public';
+    import { onMount } from 'svelte';
     export let data
 
     let page: AboutPage
     $:page = data.data.aboutPage.data.attributes
+
 </script>
+
 
 <svelte:head>
     <title>{page.seo?.title}</title>
