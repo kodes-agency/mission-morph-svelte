@@ -39,7 +39,7 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         <p bind:this={textEl} data-speed="1.05" class="text-light-cyan text-lg max-w-md font-light relative z-1">{content}</p>
-        <a on:click={()=>{ScrollSmoother.get().scrollTop(0)}} aria-label="About us page - Mission Morph - Miami's ultimate digital agency" data-speed="1.05" href="/about" class="text-light-cyan underline text-lg md:text-xl font-bold tiny">Read more</a>
+        <a on:click={()=>{ScrollSmoother.get().scrollTop(0)}} data-speed="1.05" href="/about" class="text-light-cyan underline text-lg md:text-xl font-bold tiny">Read more about us</a>
     </div>
 </section>
      
