@@ -4,6 +4,7 @@
   import ScrollTrigger from 'gsap/dist/ScrollTrigger'
   import Figures from "$lib/components/page/service/Figures.svelte";
   import CTA1 from "$lib/components/page/service/CTA1.svelte";
+  import CTA2 from "$lib/components/page/service/CTA2.svelte";
   import type { Service } from "../../../__generated__/graphql.js";
   import { PUBLIC_IMG_URL } from "$env/static/public";
   import { beforeNavigate } from "$app/navigation";
@@ -32,12 +33,12 @@
     <meta name="description" content={service.seo?.description}>
 </svelte:head>
 
-<main>
+<main class=" -space-y-px">
   <Hero
     heading={service.heroSection?.title}
     color={service.color}
     content={service.heroSection?.content}
-    src={PUBLIC_IMG_URL + service.heroSection?.image?.data?.attributes?.url}
+    src={PUBLIC_IMG_URL + service.heroSection?.image?.data?.attributes?.url+"?format=webp"}
     alt={service.heroSection?.image?.data?.attributes?.alternativeText}
     category={service.title}
   />
@@ -46,4 +47,5 @@
   <CTA1 color={service.color} />
 
   <Figures color={service.color} stats={service.statistics} />
+  <CTA2 color={service.color}/>
 </main>

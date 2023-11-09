@@ -101,13 +101,13 @@
         <p class=" text-light-cyan underline text-sm w-full text-center">{scroll}</p>
     </div>
     <div bind:this={testEl} data-speed="0.90" class="absolute top-16 md:top-20 left-10 overflow-hidden w-52 md:w-80 md:left-40 z-0">
-        <img bind:this={vectorLarge} class="" width="357px" src="{PUBLIC_IMG_URL+imgLarge.url}" alt="{imgLarge.alternativeText}">
+        <img bind:this={vectorLarge} class="" width="357px" src="{PUBLIC_IMG_URL+imgLarge.url +"?format=webp&width=600"}" alt="{imgLarge.alternativeText}">
     </div>
     <div data-speed="0.92" class="mix-blend-luminosity w-40 absolute bottom-48 md:bottom-40 overflow-hidden right-32 md:right-40 z-10">
-        <img bind:this={vectorMedium} width="218px" src="{PUBLIC_IMG_URL+imgMedium.url}" alt="{imgMedium.alternativeText}">
+        <img bind:this={vectorMedium} width="218px" src="{PUBLIC_IMG_URL+imgMedium.url +"?format=webp&width=500"}" alt="{imgMedium.alternativeText}">
     </div>
     <div data-speed="0.95" class="mix-blend-luminosity absolute bottom-10 right-10 w-12 md:w-auto overflow-hidden md:right-auto md:left-96 z-0">
-        <img bind:this={vectorSmall} width="97px" src="{PUBLIC_IMG_URL+imgSmall.url}" alt="{imgSmall.alternativeText}">
+        <img bind:this={vectorSmall} width="97px" src="{PUBLIC_IMG_URL+imgSmall.url +"?format=webp&width=400"}" alt="{imgSmall.alternativeText}">
     </div>
 </section>
     

@@ -73,7 +73,7 @@
       <Blog
         title={item.attributes?.title}
         date={item.attributes?.publishedAt}
-        src={PUBLIC_IMG_URL + item.attributes?.thumbnail?.data?.attributes?.url}
+        src={PUBLIC_IMG_URL + item.attributes?.thumbnail?.data?.attributes?.url+"?format=webp&width=600"}
         alt={item.attributes?.thumbnail?.data?.attributes?.alternativeText}
         category={item.attributes?.blogCategories?.data}
         id={item.id}

@@ -2,7 +2,7 @@
     export let data
 </script>
 
-<main class="flex flex-col justify-center items-center w-full p-5 py-20 md:p-20 lg:p-40">
+<main class="flex flex-col justify-center items-center w-full p-5 py-20 md:p-20 lg:p-40 bg-white">
     <h1 class="text-5xl md:text-7xl font-bold text-center mb-10 md:mb-20">{data.data.cookiesPage.data.attributes.heading}</h1>
     <div class="content max-w-[90vw]">{@html data.data.cookiesPage.data.attributes.content}</div>
 </main>

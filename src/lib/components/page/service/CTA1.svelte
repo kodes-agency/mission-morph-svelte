@@ -1,7 +1,7 @@
 <script lang="ts">
   import ScrollSmoother from 'gsap/dist/ScrollSmoother'
   import { animateText, anmCleanUp } from '$lib/functions/textAnimation'
-  import { onMount } from 'svelte';
+  import { afterUpdate, onMount } from 'svelte';
   import { beforeNavigate } from '$app/navigation';
   export let color: string | undefined;
 
@@ -35,7 +35,7 @@
         anmCleanUp()
       }
   })
-
+  
   beforeNavigate(()=>{
     currentCount = countDownStart
   })

@@ -18,7 +18,7 @@
 <Hero
   heading={pageData.attributes?.heroHeading}
   content={pageData.attributes?.heroContent}
-  src={PUBLIC_IMG_URL + pageData.attributes?.heroThumbnail?.data?.attributes?.url}
+  src={PUBLIC_IMG_URL + pageData.attributes?.heroThumbnail?.data?.attributes?.url+"?format=webp&width=800"}
   alt={pageData.attributes?.heroThumbnail?.data?.attributes?.alternativeText}
 />
 <Content segments={pageData.attributes?.faqSegment} />

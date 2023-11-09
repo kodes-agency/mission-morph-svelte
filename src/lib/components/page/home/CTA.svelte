@@ -47,7 +47,7 @@
         <h2
           bind:this={headingEl}
           data-speed="1.05"
-          class="text-4xl md:text-7xl lg:text-8xl font-black text-light-cyan pb-40 md:pb-10 lg:pb-0"
+          class="text-3xl md:text-7xl uppercase lg:text-8xl font-black text-light-cyan pb-40 md:pb-10 lg:pb-0"
         >
           {heading}
         </h2>

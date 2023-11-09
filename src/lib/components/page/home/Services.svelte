@@ -9,11 +9,12 @@
   import { crossfade, fade, slide, blur } from "svelte/transition";
 
   export let services: Array<ServiceEntity>;
+
+  let currentService: number = 0;
+  let smoother: any;
+    
   let divEls: NodeListOf<HTMLElement>;
   let serviceDivs: NodeListOf<HTMLElement>;
-  let activeService = 0;
-  let smoother: any;
-  let currentService: number = 0;
   let sectionEl: HTMLElement;
   let headingEls: NodeListOf<HTMLElement>;
   let textEls: NodeListOf<HTMLElement>;
@@ -21,6 +22,7 @@
   let categoryEls: NodeListOf<HTMLElement>;
   let entranceTl: any;
   let toggleTl: any;
+
   let mobileCategoryEl: HTMLElement;
 
   let displayWidth: number;
@@ -30,27 +32,20 @@
   }
 
   function toggleService(i: any) {
-    divEls.forEach((div) => {
-      if (div.dataset.id != i) {
-        div.style.visibility = "hidden";
+    divEls.forEach((divEl) => {
+      if (divEl.dataset.id != i) {
+        divEl.style.visibility = "hidden";
       } else {
-        div.style.visibility = "visible";
-        activeService = i;
+        divEl.style.visibility = "visible";
+        currentService = i;
       }
     });
+
+    
   }
 
-  // afterUpdate(()=>{
-  //   smoother.effects('[data-speed]')
-  // })
 
   onMount(() => {
-    displayWidth = window.innerWidth;
-
-    toggleTl = gsap.timeline({
-      revert: true,
-    });
-
     divEls = document.querySelectorAll("[data-id]");
     serviceDivs = document.querySelectorAll(".service");
     headingEls = document.querySelectorAll(".heading");
@@ -58,7 +53,14 @@
     textEls = document.querySelectorAll(".text");
     imgEls = document.querySelectorAll(".img");
 
+    displayWidth = window.innerWidth;
+
     smoother = ScrollSmoother.get();
+
+    toggleTl = gsap.timeline({
+      revert: true,
+    });
+
 
     divEls.forEach((div) => {
       if (Number(div.dataset.id) != currentService) {
@@ -84,10 +86,6 @@
         ease: "power2.inOut",
       });
 
-      gsap.set(headingEls[0], {
-        lineHeight: 1.12,
-      });
-
       let splitText = new SplitText(headingEls[0], {
         type: "lines",
       });
@@ -100,7 +98,7 @@
       gsap.set(".splitHeadingClass", {
         overflow: "hidden",
       });
-      
+
       entranceTl.from(
         splitText.lines,
         {
@@ -129,7 +127,7 @@
   bind:this={sectionEl}
   class="bg-gradient-to-b from-cyan to-magenta min-h-screen pt-40 flex justify-center"
 >
-  <div class="w-[85vw] max-w-5xl md:w-[80vw]">
+  <div class="w-[85vw] max-w-5xl md:w-[80vw] flex flex-col space-y-5  md:space-y-10 lg:space-y-20">
     <div class="relative">
       <div data-speed="1.05" class="z-10 relative">
         {#each services as service, i}
@@ -138,7 +136,7 @@
             <!-- in:fade={{ duration: 500 }} -->
             <h2
               in:fade={{ duration: 500 }}
-              class="interactable heading text-3xl absolute top-0 sm:text-5xl md:text-7xl lg:text-8xl font-black text-light-cyan z-20"
+              class="interactable heading text-4xl uppercase top-0 leading-snug sm:text-5xl md:text-7xl 2xl:text-8xl font-black text-light-cyan z-20"
               data-labelBold="explore"
               data-label={service.attributes?.homePageCursorLable}
             >
@@ -150,27 +148,26 @@
       </div>
       <div data-speed="0.95" class="z-0 relative">
         {#each services as service, i}
-          {#if currentService == i}
           <a href="/service/{service.attributes?.slug}" class="pointer-events-none lg:pointer-events-auto">
             <img
               in:blur={{ amount: 1000, duration: 1500}}
               out:blur={{ amount: 1000, duration: 1500}}
               src={PUBLIC_IMG_URL +
-                service.attributes?.homePageThumbnail?.data?.attributes?.url}
+                service.attributes?.homePageThumbnail?.data?.attributes?.url+"?format=webp&width=600"}
               alt={service.attributes?.homePageThumbnail?.data?.attributes
                 ?.alternativeText}
-              class="img interactable w-60 md:w-80 2xl:w-96 object-cover absolute -top-20 right-0 md:left-80 z-0"
+              class="img interactable w-60 md:w-80 2xl:w-96 object-cover absolute -top-40 right-0 md:left-40 lg:left-80 z-0"
               data-labelBold="explore"
               data-label={service.attributes?.homePageCursorLable}
+              data-id={i}
             />
           </a>
-          {/if}
         {/each}
       </div>
     </div>
-    <div class="flex relative">
+    <div class="flex flex-col space-y-5 md:space-y-0 md:flex-row w-full md:space-x-10 lg:space-x-20 xl:space-x-40 relative">
       <div
-        class="flex flex-col absolute z-20 top-24 md:top-60 md:left-0 left-[4vw]"
+        class="flex flex-col z-20 top-24 md:top-60 md:left-0 left-[4vw]"
         data-speed="1.05"
       >
         {#each services as service, i}
@@ -200,23 +197,20 @@
           {/if}
         {/each}
       </div>
-      <div class="relative h-40" data-speed="1.05">
+      <div class="h-40 relative" data-speed="1.05">
         {#each services as service, i}
-          {#if currentService == i}
-          <div transition:blur={{ amount: 20, duration: 1500 }}
-          class=" z-10 absolute top-72 md:top-64 md:left-[40vw] 2xl:left-[30vw]">
-              <a href="/service/{service.attributes?.slug}" class="pointer-events-none lg:pointer-events-auto">
-                <p
-                  class="interactable text-base md:text-lg text-light-cyan w-[90vw] md:w-[350px] pb-10 pr-5 lg:w-[500px] lg:font-light"
-                  data-labelBold="explore"
-                  data-label={service.attributes?.homePageCursorLable}
-                >
-                  {service.attributes?.homePageContent}
-                </p>
-              </a>
-              <a class="border-b-2 lg:hidden border-medium-purple tiny text-light-cyan uppercase hover:scale-95 transition-all duration-200 text-xl font-bold" href="/service/{service.attributes?.slug}">Learn more</a>
-            </div>
-          {/if}
+          <div class="text z-10 absolute" data-id={i}>
+            <a href="/service/{service.attributes?.slug}" class="pointer-events-none lg:pointer-events-auto">
+              <p
+                class="interactable text-lg sm:text-base lg:text-lg text-light-cyan w-[90vw] md:w-[320px] lg:w-[400px] pb-10 pr-5 xl:w-[500px] lg:font-light"
+                data-labelBold="explore"
+                data-label={service.attributes?.homePageCursorLable}
+              >
+                {service.attributes?.homePageContent}
+              </p>
+            </a>
+            <a class="border-b-2 lg:hidden border-medium-purple tiny text-light-cyan uppercase hover:scale-95 transition-transform duration-200 text-xl font-bold" href="/service/{service.attributes?.slug}">Learn more</a>
+          </div>
         {/each}
       </div>
     </div>

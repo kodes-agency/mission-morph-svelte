@@ -85,7 +85,7 @@
 
 </script>
 
-<section bind:this={section} class=" bg-black flex flex-col px-10 md:px-[10vw] lg:px-[15vw] py-[20vh]">
+<section bind:this={section} class=" bg-black flex flex-col px-10 md:px-[10vw] lg:px-[15vw] py-[10vh] md:py-[20vh]">
     <div class="flex flex-col md:flex-row space-y-5 md:space-y-0 max-w-4xl md:items-center ">
         <div data-speed='0.95' class="min-w-[300px] w-[300px] h-[300px] grid grid-cols-10 gap-0 md:gap-3">
             {#each dotArray as dot }

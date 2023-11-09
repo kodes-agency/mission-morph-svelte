@@ -8,7 +8,7 @@
 </script>
 
 <section
-  class="bg-gradient-to-b flex flex-col justify-end from-black to-dark-purple min-h-[50vh]"
+  class="bg-gradient-to-b flex flex-col justify-end from-black to-dark-purple min-h-[50vh] -mt-px"
 >
     <div class="flex h-full flex-col items-start md:items-center justify-end pt-20 pb-5 space-y-10 px-5">
       <div class="flex flex-col md:flex-row space-x-0 space-y-10 md:space-y-0 md:space-x-10 lg:space-x-24 ">
@@ -32,12 +32,12 @@
             <a href="/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Facebook</a>
             <a href="https://www.instagram.com/missionmorphofficial/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Instagram</a>
         </div>
-        <div class="flex flex-col space-y-1 md:space-y-0">
+        <address class="flex flex-col not-italic space-y-1 md:space-y-0">
             <p class=" uppercase font-bold text-medium-purple text-xl">Contact://</p>
-            <a href="tel:(555) 555-1234" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">(555) 555-1234</a>
-            <a href="mailto:hello@missionmorph.com" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">hello@missionmorph.com</a>
-            <p class="uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Miami, Florida</p>
-        </div>
+            <a href="tel:+13053074684" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">+1 (305) 307-4684</a>
+            <a href="mailto:hello@missionmorph.com" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">office@missionmorph.com</a>
+            <p class="uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">162 NE 25th St, Miami, FL 33137</p>
+        </address>
       </div>
 
       <div class="flex w">

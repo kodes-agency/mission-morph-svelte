@@ -5,7 +5,6 @@
     let links: NodeListOf<HTMLElement>
 
   onMount(() => {
-    console.log($page);
     links = document.querySelectorAll(".links");
   });
 

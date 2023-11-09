@@ -5,7 +5,7 @@
     export let color: string | undefined
 </script>
 
-<section id="stats">
+<section id="stats" class="-space-y-px">
     {#each stats as stat, i }
         <Stats 
             figure = {stat.number}
