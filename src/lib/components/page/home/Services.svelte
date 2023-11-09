@@ -209,7 +209,7 @@
                 {service.attributes?.homePageContent}
               </p>
             </a>
-            <a class="border-b-2 lg:hidden border-medium-purple tiny text-light-cyan uppercase hover:scale-95 transition-transform duration-200 text-xl font-bold" href="/service/{service.attributes?.slug}">Learn more</a>
+            <a class="border-b-2 lg:hidden border-medium-purple tiny text-light-cyan uppercase hover:scale-95 transition-transform duration-200 text-xl font-bold" aria-label="{service.attributes?.homePageCursorLable} page" href="/service/{service.attributes?.slug}">Learn more</a>
           </div>
         {/each}
       </div>
