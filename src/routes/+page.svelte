@@ -46,7 +46,7 @@
     <Blog 
         heading={page.blogHeading}
         content={page.blogContent}
-        src={PUBLIC_IMG_URL+page.blogThumbnail?.data?.attributes?.url+`${displayWidth < 800 ? "?format=webp&width=800" : "?format=webp"}`}
+        src={PUBLIC_IMG_URL+page.blogThumbnail?.data?.attributes?.url+"?format=webp"}
         alt={page.blogThumbnail?.data?.attributes?.alternativeText}
         blogs={page.blogs?.data}
     />

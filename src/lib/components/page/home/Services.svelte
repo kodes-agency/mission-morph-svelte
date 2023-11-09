@@ -125,7 +125,7 @@
 
 <section
   bind:this={sectionEl}
-  class="bg-gradient-to-b from-cyan to-magenta min-h-screen pt-40 flex justify-center"
+  class="bg-gradient-to-b from-cyan to-magenta min-h-[130vh] md:min-h-screen pt-40 flex justify-center"
 >
   <div class="w-[85vw] max-w-5xl md:w-[80vw] flex flex-col space-y-5  md:space-y-10 lg:space-y-20">
     <div class="relative">
