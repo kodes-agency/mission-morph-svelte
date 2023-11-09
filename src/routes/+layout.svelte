@@ -154,11 +154,6 @@
   });
 </script>
 
-<svelte:head>
-  <meta name="robots" content="noindex" />
-</svelte:head>
-
-
 <div
   id="cursor"
   class="fixed top-0 left-0 z-[1000] pointer-events-none h-5 w-5 rounded-full bg-light-cyan hidden md:flex items-center justify-center"
