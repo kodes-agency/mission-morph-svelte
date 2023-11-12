@@ -211,7 +211,7 @@
               {/each}
             {/if}
           </div>
-          <div class="relative">
+          <div class="relative pb-10 md:pb-0">
             <button 
               bind:this={buttonEl}
               on:click={()=>{
@@ -223,7 +223,7 @@
               </svg>
               <p>Share</p>
             </button>
-            <div bind:this={buttonShareWrapperEl} class="absolute invisible left-28 -top-6 md:top-auto md:left-auto flex mt-2 md:flex-col space-x-2 md:space-x-0 md:space-y-2 bg-light-cyan md:mt-2 p-4 border rounded-3xl">
+            <div bind:this={buttonShareWrapperEl} class="absolute invisible top-auto left-auto flex mt-2 md:flex-col space-x-2 md:space-x-0 md:space-y-2 bg-light-cyan md:mt-2 p-4 border rounded-3xl">
               <div class="flex space-x-2">
                 <button data-service="facebook" class="js-share-button border p-2  tiny bg-white rounded-full flex items-center justify-center hover:scale-95 transition-all duration-200">
                     <svg class="fill-black w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
