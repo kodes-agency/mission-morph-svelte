@@ -36,7 +36,7 @@
             <p class=" uppercase font-bold text-medium-purple text-xl">Contact://</p>
             <a href="tel:+13053074684" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">+1 (305) 307-4684</a>
             <a href="mailto:office@missionmorph.com" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">office@missionmorph.com</a>
-            <p class="uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">162 NE 25th St, Miami, FL 33137</p>
+            <a href="https://www.google.com/maps?cid=644257195768476569" class="uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">162 NE 25th St, Miami, FL 33137</a>
         </address>
       </div>
 
