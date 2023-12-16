@@ -27,16 +27,16 @@
         </div>
         <div class="flex flex-col space-y-3 md:space-y-0">
             <p class=" uppercase font-bold text-medium-purple text-xl">Social://</p>
-            <a href="https://www.instagram.com/missionmorphofficial/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Twitter</a>
-            <a href="https://www.linkedin.com/in/mission-morph-584b09283/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">LinkedIn</a>
-            <a href="/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Facebook</a>
-            <a href="https://www.instagram.com/missionmorphofficial/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Instagram</a>
+            <a data-sveltekit-noscroll href="https://twitter.com/MissionMorph" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Twitter</a>
+            <a data-sveltekit-noscroll href="https://www.linkedin.com/in/mission-morph-584b09283/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">LinkedIn</a>
+            <a data-sveltekit-noscroll href="https://www.facebook.com/missionmorph" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Facebook</a>
+            <a data-sveltekit-noscroll href="https://www.instagram.com/missionmorphofficial/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Instagram</a>
         </div>
         <address class="flex flex-col not-italic space-y-3 md:space-y-0">
             <p class=" uppercase font-bold text-medium-purple text-xl">Contact://</p>
-            <a href="tel:+13053074684" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">+1 (305) 307-4684</a>
-            <a href="mailto:office@missionmorph.com" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">office@missionmorph.com</a>
-            <a href="https://www.google.com/maps?cid=644257195768476569" class="uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">162 NE 25th St, Miami, FL 33137</a>
+            <a data-sveltekit-noscroll href="tel:+13053074684" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">+1 (305) 307-4684</a>
+            <a data-sveltekit-noscroll href="mailto:office@missionmorph.com" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">office@missionmorph.com</a>
+            <a data-sveltekit-noscroll href="https://www.google.com/maps?cid=644257195768476569" target="_blank" class="uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">162 NE 25th St, Miami, FL 33137</a>
         </address>
       </div>
 
