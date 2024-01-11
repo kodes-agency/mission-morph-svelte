@@ -99,6 +99,12 @@
   
   
   onMount(()=>{
+    let contentAs = contentEl.querySelectorAll('a')
+
+    contentAs.forEach((a)=>{
+      a.setAttribute('target', '_blank')
+    })
+
     smoother = ScrollSmoother.get()
     headings = contentEl.querySelectorAll('h2')
     headings.forEach((heading)=>{
@@ -305,6 +311,16 @@
 
   :global(.content h2 strong){
     font-weight: 400;
+  }
+
+  :global(.content a){
+    text-decoration: underline;
+    font-weight: 500;
+    text-decoration-color: blueviolet;
+  }
+
+  :global(.content a:hover){
+    font-weight: 600;
   }
 
   :global(.content li){
