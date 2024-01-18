@@ -14,7 +14,7 @@
     window.addEventListener("message", function(e) {
       if(isCalendlyEvent(e)) {
         if(e.data.event === 'calendly.event_scheduled'){
-          goto("/thank-you");
+            window.location = "https://missionmorph.com/thank-you";
         }
       }
     });
