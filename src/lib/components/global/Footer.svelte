@@ -28,7 +28,7 @@
         <div class="flex flex-col space-y-3 md:space-y-0">
             <p class=" uppercase font-bold text-medium-purple text-xl">Social://</p>
             <a data-sveltekit-noscroll href="https://twitter.com/MissionMorph" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Twitter</a>
-            <a data-sveltekit-noscroll href="https://www.linkedin.com/in/mission-morph-584b09283/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">LinkedIn</a>
+            <a data-sveltekit-noscroll href="https://www.linkedin.com/company/mission-morph/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">LinkedIn</a>
             <a data-sveltekit-noscroll href="https://www.facebook.com/missionmorph" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Facebook</a>
             <a data-sveltekit-noscroll href="https://www.instagram.com/missionmorphofficial/" target="_blank" class=" uppercase text-medium-purple lg:text-lg hover:text-white transition-colors duration-200 tiny">Instagram</a>
         </div>
