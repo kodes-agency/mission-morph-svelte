@@ -10,10 +10,11 @@ export default function () {
           }
         }
       }
-      blogs(filters: $filters) {
+      blogs(filters: $filters, sort: "publishedAt:desc") {
         data {
           id
           attributes {
+            publishedAt
             slug
             blogCategories {
               data {

@@ -3,7 +3,7 @@ import { gql } from "@apollo/client/core/index.js";
 export default function () {
   const query = gql`
     query SingleBlog($filters: BlogFiltersInput) {
-      blogs(filters: $filters) {
+      blogs(filters: $filters,) {
         data {
           attributes {
             blogCategories {
