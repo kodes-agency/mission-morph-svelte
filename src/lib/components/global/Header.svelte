@@ -4,6 +4,21 @@
   import "../../../calendly.css";
   import { onMount } from "svelte";
   import SplitText from "gsap/dist/SplitText";
+  import { goto } from "$app/navigation";
+
+  function isCalendlyEvent(e) {
+    return e.origin === "https://calendly.com" && e.data.event && e.data.event.indexOf("calendly.") === 0;
+  };
+ 
+  if(typeof window !== "undefined"){
+    window.addEventListener("message", function(e) {
+      if(isCalendlyEvent(e)) {
+        if(e.data.event === 'calendly.event_scheduled'){
+          goto("/thank-you");
+        }
+      }
+    });
+  }
 
   let menuSection: HTMLElement;
   let menuWrapper: HTMLElement;
