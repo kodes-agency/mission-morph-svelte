@@ -18,7 +18,6 @@
 
     onMount(()=>{
         let mm = gsap.matchMedia()
-
         
         let ctx = gsap.context(() => {
             let tlHero = gsap.timeline();
@@ -78,55 +77,6 @@
                     x: -600
                 }, "<")
             })
-
-            mm.add('(max-width: 1024px)', ()=>{
-                let tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: gbpMobileImg,
-                        start: "top 100px",
-                        end: "bottom 200px",
-                        scrub: true,
-                        pin: true
-                    }
-                });
-        
-                tl.to(gbpMobileImg, {
-                    scale: 1.4,
-                });
-
-                let tl2 = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: comparisonSection,
-                        start: "center bottom",
-                        end: "center center",
-                        scrub: true,
-                    }
-                });
-
-                tl2.to(gbpMobileImg, {
-                    opacity: 0,
-                });
-
-                let tl3 = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: comparisonSection,
-                            start: "top top",
-                            end: "bottom 100px",
-                            scrub: true,
-                            pin:true
-                        },    
-                    })
-    
-                tl3.from(arrowEl, {
-                    rotate: -90
-                })
-
-                tl3.from(newImgEl, {
-                    opacity: 0,
-                    y: -300
-                }, "<")
-            })
-
 
         });
 
@@ -215,7 +165,7 @@
     ]
 </script>
 
-    <section class="h-[90vh] lg:h-screen bg-gray flex flex-col items-center pt-[25vh] relative">
+    <section class="h-[85vh] lg:h-screen bg-gray flex flex-col items-center pt-[25vh] relative">
         <h1 class="opacity-0 absolute top-0">Google is shutting down all free business websites</h1>
         <h2 class="text-8xl lg:text-[300px] font-bold opacity-5 text-black absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[150px]">ERROR</h2>
         <div class="space-y-4 lg:space-y-10 flex flex-col items-center">
@@ -241,8 +191,8 @@
         <img bind:this={heroImgEl} class="absolute w-[90vw] sm:w-[400px] opacity-0 lg:w-[500px] bottom-20 lg:bottom-40" src="/assets/external/Sorry-msg.png" alt="">
     </section>
     
-    <section bind:this={gbpImgSection} class="h-[150vh] bg-gradient-to-b from-gray to-light-cyan relative overflow-hidden">
-            <img bind:this={gbpMobileImg} class="absolute max-h-[80vh] object-contain top-[300px] lg:hidden left-1/2 -translate-x-1/2 -translate-y-1/2" src="/assets/external/phone.png" width="800px" alt="">
+    <section bind:this={gbpImgSection} class="lg:h-[150vh] bg-gradient-to-b from-gray to-light-cyan relative overflow-hidden">
+            <img bind:this={gbpMobileImg} class="h-[90vh] scale-[1.4] object-contain lg:hidden" src="/assets/external/phone.png" alt="">
             <img bind:this={gbpDesktopImg} class="absolute top-[300px] hidden lg:block left-1/2 -translate-x-1/2 -translate-y-1/2" src="/assets/external/laptop.png" width="800px" alt="">
     </section>
     
