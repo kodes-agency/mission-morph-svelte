@@ -165,7 +165,7 @@
     ]
 </script>
 
-    <section class="h-[88vh] lg:h-screen bg-gray flex flex-col items-center pt-[25vh] relative">
+    <section class="h-[100dvh] lg:h-screen bg-gray flex flex-col items-center pt-[25vh] relative">
         <h1 class="opacity-0 absolute top-0">Google is shutting down all free business websites</h1>
         <h2 class="text-8xl lg:text-[300px] font-bold opacity-5 text-black absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[150px]">ERROR</h2>
         <div class="space-y-4 lg:space-y-10 flex flex-col items-center">
@@ -191,14 +191,14 @@
         <img bind:this={heroImgEl} class="absolute w-[90vw] sm:w-[400px] opacity-0 lg:w-[500px] bottom-20 lg:bottom-40" src="/assets/external/Sorry-msg.png" alt="">
     </section>
     
-    <section bind:this={gbpImgSection} class="lg:h-[150vh] py-5 bg-gradient-to-b from-gray to-light-cyan relative overflow-hidden">
-            <img bind:this={gbpMobileImg} class="h-[90vh] scale-[1.4] object-contain lg:hidden" src="/assets/external/phone.png" alt="">
+    <section bind:this={gbpImgSection} class="h-[100vh] lg:h-[150vh] flex items-center justify-center py-5 bg-gradient-to-b from-gray to-light-cyan relative overflow-hidden">
+            <img bind:this={gbpMobileImg} class="scale-[1.3] object-contain lg:hidden" src="/assets/external/phone.png" alt="">
             <img bind:this={gbpDesktopImg} class="absolute top-[300px] hidden lg:block left-1/2 -translate-x-1/2 -translate-y-1/2" src="/assets/external/laptop.png" width="800px" alt="">
     </section>
     
     <section bind:this={comparisonSection} class="min-h-screen space-y-5 pt-10 flex flex-col items-center lg:justify-center bg-light-cyan p-5">
         <h2 class="text-3xl lg:text-5xl font-bold text-dark-purple text-center">Change. <br class="lg:hidden"> For the better.</h2>
-        <p class=" text-xl text-center max-w-[1000px] pb-10">Not just a replacement, but a game changer. Our managed solutions can help you stand out from the basic GBP look, increasing the amount of visitors and conversions. </p>
+        <p class=" text-xl text-center max-w-[1000px] pb-5 lg:pb-10">Not just a replacement, but a game changer. Our managed solutions can help you stand out from the basic GBP look, increasing the amount of visitors and conversions. </p>
         <div bind:this={comparisonSectionMobile} class="relative flex flex-col lg:flex-row space-y-10 lg:space-y-0 md:px-10 lg:space-x-20">
             <img class="max-w-[500px] w-[90vw]" src="/assets/external/comp-old.png" alt="">
             <img bind:this={newImgEl} class="max-w-[500px] w-[90vw]" src="/assets/external/comp-new.png" alt="">
