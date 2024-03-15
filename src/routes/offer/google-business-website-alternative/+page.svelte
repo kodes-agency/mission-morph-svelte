@@ -215,7 +215,7 @@
     ]
 </script>
 
-    <section class="h-screen bg-gray flex flex-col items-center pt-[25vh] relative">
+    <section class="h-[90vh] lg:h-screen bg-gray flex flex-col items-center pt-[25vh] relative">
         <h1 class="opacity-0 absolute top-0">Google is shutting down all free business websites</h1>
         <h2 class="text-8xl lg:text-[300px] font-bold opacity-5 text-black absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[150px]">ERROR</h2>
         <div class="space-y-4 lg:space-y-10 flex flex-col items-center">
