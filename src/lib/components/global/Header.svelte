@@ -50,6 +50,7 @@
   }
 
   onMount(() => {
+    console.log($page)
     displayWidth = window.innerWidth;
     toggleMenuTl = gsap.timeline({
       reversed: true,
@@ -156,9 +157,7 @@
     <div class="h-16 w-screen bg-white fixed z-10 top-0 left-0" />
   {/if}
   <div
-    class="tiny {$page.route.id?.includes('/blog/[slug]')
-      ? ''
-      : 'w-[33vw]'} h-fit fixed top-5 md:top-10 z-50 left-5 md:left-10 lg:left-20 mix-blend-difference"
+    class="tiny w-[33vw] h-fit fixed top-5 md:top-10 z-50 left-5 md:left-10 lg:left-20 mix-blend-difference"
   >
     <a aria-label="Home page" href="/">
       <svg
@@ -418,6 +417,11 @@
       }}
     />
   </section>
+  {#if $page.route.id?.includes("offer") }
+    <button class="tiny fixed bottom-5 right-3 md:bottom-10 md:right-10 z-10 bg-medium-purple text-black rounded-full py-2 px-5 text-xs md:text-sm font-bold uppercase hover:bg-green hover:text-white transition-all duration-300">
+      Book a free consultation
+    </button>
+  {/if}
 </nav>
 
 <style>
