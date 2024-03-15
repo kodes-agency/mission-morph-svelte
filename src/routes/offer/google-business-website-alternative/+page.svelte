@@ -192,7 +192,7 @@
     </section>
     
     <section bind:this={gbpImgSection} class="lg:h-[150vh] bg-gradient-to-b from-gray to-light-cyan relative overflow-hidden">
-            <img bind:this={gbpMobileImg} class="h-[90vh] scale-[1.4] object-contain lg:hidden" src="/assets/external/phone.png" alt="">
+            <img bind:this={gbpMobileImg} class="h-[90vh] py-5 scale-[1.4] object-contain lg:hidden" src="/assets/external/phone.png" alt="">
             <img bind:this={gbpDesktopImg} class="absolute top-[300px] hidden lg:block left-1/2 -translate-x-1/2 -translate-y-1/2" src="/assets/external/laptop.png" width="800px" alt="">
     </section>
     
@@ -208,7 +208,7 @@
         </div>
     </section>
     
-    <section class="pb-40 lg:py-40 bg-gradient-to-b to-gray from-light-cyan flex flex-col items-center justify-center space-y-4">
+    <section class="py-40 lg:py-40 bg-gradient-to-b to-gray from-light-cyan flex flex-col items-center justify-center space-y-4">
         <h2 class="text-3xl lg:text-5xl font-bold text-dark-purple">Stand out your way</h2>
         <p class="text-xl text-center max-w-[1000px]">Pick one of our 3 custom solutions and get to your audience now!</p>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 p-5 lg:w-[95vw] xl:w-[80vw] pt-10 max-w-[1200px]">
