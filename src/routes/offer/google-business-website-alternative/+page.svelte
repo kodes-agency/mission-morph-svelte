@@ -188,7 +188,7 @@
                 <p class="text-xl text-center">This is  not what you want your customers to see <br class="hidden lg:block"> when they google your business.</p>
             </div>
         </div>
-        <img bind:this={heroImgEl} class="absolute w-[90vw] sm:w-[400px] opacity-0 lg:w-[500px]  bottom-28 lg:bottom-40" src="/assets/external/Sorry-msg.png" alt="">
+        <img bind:this={heroImgEl} class="absolute w-[90vw] sm:w-[400px] opacity-0 lg:w-[500px] bottom-20 lg:bottom-40" src="/assets/external/Sorry-msg.png" alt="">
     </section>
     
     <section bind:this={gbpImgSection} class="h-[100vh] lg:h-[150vh] flex items-center justify-center py-5 bg-gradient-to-b from-gray to-light-cyan relative overflow-hidden">
