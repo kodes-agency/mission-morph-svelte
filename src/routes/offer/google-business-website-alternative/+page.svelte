@@ -208,9 +208,9 @@
         </div>
     </section>
     
-    <section class="py-40 lg:py-40 bg-gradient-to-b to-gray from-light-cyan flex flex-col items-center justify-center space-y-4">
+    <section class="pb-40 pt-20 lg:py-40 bg-gradient-to-b to-gray from-light-cyan flex flex-col items-center justify-center space-y-4">
         <h2 class="text-3xl lg:text-5xl font-bold text-dark-purple">Stand out your way</h2>
-        <p class="text-xl text-center max-w-[1000px]">Pick one of our 3 custom solutions and get to your audience now!</p>
+        <p class="text-xl text-center w-90vw max-w-[1000px]">Pick one of our 3 custom solutions and get to your audience now!</p>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 p-5 lg:w-[95vw] xl:w-[80vw] pt-10 max-w-[1200px]">
             {#each priceCards as priceCard}
                 <PriceCard
