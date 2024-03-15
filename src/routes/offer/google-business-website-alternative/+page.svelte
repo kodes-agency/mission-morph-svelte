@@ -165,7 +165,7 @@
     ]
 </script>
 
-    <section class="h-[100dvh] lg:h-screen bg-gray flex flex-col items-center pt-[25vh] relative">
+    <section class="h-[100svh] lg:h-screen bg-gray flex flex-col items-center pt-[20vh] lg:pt-[25vh] relative">
         <h1 class="opacity-0 absolute top-0">Google is shutting down all free business websites</h1>
         <h2 class="text-8xl lg:text-[300px] font-bold opacity-5 text-black absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[150px]">ERROR</h2>
         <div class="space-y-4 lg:space-y-10 flex flex-col items-center">
@@ -188,7 +188,7 @@
                 <p class="text-xl text-center">This is  not what you want your customers to see <br class="hidden lg:block"> when they google your business.</p>
             </div>
         </div>
-        <img bind:this={heroImgEl} class="absolute w-[90vw] sm:w-[400px] opacity-0 lg:w-[500px] bottom-20 lg:bottom-40" src="/assets/external/Sorry-msg.png" alt="">
+        <img bind:this={heroImgEl} class="absolute w-[90vw] sm:w-[400px] opacity-0 lg:w-[500px]  bottom-28 lg:bottom-40" src="/assets/external/Sorry-msg.png" alt="">
     </section>
     
     <section bind:this={gbpImgSection} class="h-[100vh] lg:h-[150vh] flex items-center justify-center py-5 bg-gradient-to-b from-gray to-light-cyan relative overflow-hidden">
