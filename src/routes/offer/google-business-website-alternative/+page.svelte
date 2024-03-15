@@ -19,18 +19,18 @@
     onMount(()=>{
         let mm = gsap.matchMedia()
 
-        let tlHero = gsap.timeline();
-        tlHero.to(heroImgEl, {
-            opacity: 1,
-            duration: 0.8,
-            delay:1.5
-        })
-        .from(heroImgEl, {
-            y: 100,
-            duration: 0.8,
-        }, "<")
-
+        
         let ctx = gsap.context(() => {
+            let tlHero = gsap.timeline();
+            tlHero.to(heroImgEl, {
+                opacity: 1,
+                duration: 0.8,
+                delay:1.5
+            })
+            .from(heroImgEl, {
+                y: 100,
+                duration: 0.8,
+            }, "<")
             mm.add('(min-width: 1024px)', ()=>{
                 let tl = gsap.timeline({
                     scrollTrigger: {
@@ -64,7 +64,6 @@
                     scrollTrigger: {
                         trigger: comparisonSection,
                         start: "top top",
-
                         scrub: true,
                         pin:true
                     },    
@@ -130,6 +129,10 @@
 
 
         });
+
+        return ()=>{
+            ctx.revert()
+        }
     })
 
 
