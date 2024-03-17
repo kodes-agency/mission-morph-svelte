@@ -93,12 +93,12 @@
             price: "139",
             label: false,
             features: [
-                "All the functionality of Google Business Wesbites",
+                "All the functionality of Google Business Website",
                 "Customizable design that makes your website unique",
                 "Show only the reviews that portrait your business most accurately",
                 "Encourage clients to add reviews directly on your website",
                 "Beautiful and responsive UI/UX that engages your clients 10x*",
-                "Keyword research and analysis",
+                "Keyword research and GBP integration",
                 "Meta optimization of 2 single pages"
             ],
             services: [
@@ -110,7 +110,7 @@
         },
         {
             header: "Advanced",
-            subheader: "Transform visitor into clients, increase organic web traffic and improve your brand recognition",
+            subheader: "Transform visitors into clients, increase organic web traffic and improve your brand recognition",
             price: "249",
             label: true,
             features: [
@@ -121,6 +121,7 @@
                 "Meta optimization of all single pages",
                 "Imagery optimization up to 10 images",
                 "GBP one time optimisation",
+                "2 high authority backlinks",
                 "5 image banners for your website",
                 "5 blog images for your articles"
             ],
@@ -128,8 +129,8 @@
                 "Advanced organic SEO",
                 "Basic Local SEO",
                 "Web development",
-                "Full CMS paltform",
-                "Grapic design",
+                "Full CMS platform",
+                "Graphic design",
             ],
             paymentLink: "https://buy.stripe.com/6oE8zp1UZcKW5Jm9AB",
             bookingLink: "https://calendly.com/missionmorph/30min"
@@ -149,15 +150,16 @@
                 "GBP monthly optimisation",
                 "5 additional image banners for your website (10 in total)",
                 "5 additional blog images for your articles (10 in total)",
+                "3 additional high authority backlinks (5 in total)",
                 "External campaign adaptions (2 key visuals + 8 resizes)"
             ],
             services: [
                 "Advanced organic SEO",
-                "Grapic design",
+                "Graphic design",
                 "Custom web dev",
                 "Advanced Local SEO",
                 "Brand design",
-                "Full CMS paltform",
+                "Full CMS platform",
             ],
             paymentLink: "https://buy.stripe.com/cN23f5gPTaCOc7K8wy",
             bookingLink: "https://calendly.com/missionmorph/30min"
