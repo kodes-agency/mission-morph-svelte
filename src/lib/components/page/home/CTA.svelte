@@ -41,7 +41,7 @@
         data-speed="0.95"
         {src}
         {alt}
-        class="absolute right-10 lg:right-0 -top-20 w-52 lg:w-80 h-auto z-0"
+        class="absolute right-10 lg:right-0 -top-20 w-52 md:w-auto md:h-[70vh] h-auto z-0"
       />
       <div class="relative z-10 flex space-y-5 flex-col">
         <h2

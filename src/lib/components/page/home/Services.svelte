@@ -156,7 +156,7 @@
                 service.attributes?.homePageThumbnail?.data?.attributes?.url+"?format=webp&width=600"}
               alt={service.attributes?.homePageThumbnail?.data?.attributes
                 ?.alternativeText}
-              class="img interactable w-60 md:w-80 object-cover absolute -top-40 right-0 md:left-40 lg:left-80 z-0"
+              class="img interactable w-60 md:w-auto md:h-[70vh] object-cover absolute -top-40 right-0 md:left-40 lg:left-80 z-0"
               data-labelBold="explore"
               data-label={service.attributes?.homePageCursorLable}
               data-id={i}
