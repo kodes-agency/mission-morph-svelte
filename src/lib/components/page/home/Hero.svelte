@@ -58,7 +58,7 @@
 
         const ctx = gsap.context(()=>{
             let headingSplit = new SplitText(".headingEl", {
-                    type: 'lines, chars',
+                    type: 'lines',
                 }
             )
 
@@ -97,10 +97,9 @@
         <div class="space-y-5 flex flex-col items-center">
             <h1 bind:this={headingEl} data-speed='1.05' class="headingEl text-5xl text-center md:text-6xl uppercase lg:text-7xl font-black opacity-0 transition-all text-light-cyan">On the look for growth?<br> 
             </h1>
-            <p class="headingEl text-3xl text-center max-w-lg  transition-all text-light-cyan">
+            <p class="headingEl text-3xl text-center opacity-0 max-w-lg transition-all text-light-cyan">
                 Scroll down to find out how we make sure the numbers go up.
             </p>
-
         </div>
         <p class=" text-light-cyan underline text-sm w-full text-center">Your Digital Transformation Starts Here</p>
     </div>
