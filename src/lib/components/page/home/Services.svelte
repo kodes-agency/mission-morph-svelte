@@ -136,7 +136,7 @@
             <!-- in:fade={{ duration: 500 }} -->
             <h2
               in:fade={{ duration: 500 }}
-              class="interactable heading text-4xl uppercase top-0 leading-snug sm:text-5xl md:text-7xl 2xl:text-8xl font-black text-light-cyan z-20"
+              class="interactable heading text-4xl uppercase top-0 leading-snug sm:text-5xl md:text-7xl font-black text-light-cyan z-20"
               data-labelBold="explore"
               data-label={service.attributes?.homePageCursorLable}
             >
@@ -156,7 +156,7 @@
                 service.attributes?.homePageThumbnail?.data?.attributes?.url+"?format=webp&width=600"}
               alt={service.attributes?.homePageThumbnail?.data?.attributes
                 ?.alternativeText}
-              class="img interactable w-60 md:w-80 2xl:w-96 object-cover absolute -top-40 right-0 md:left-40 lg:left-80 z-0"
+              class="img interactable w-60 md:w-80 object-cover absolute -top-40 right-0 md:left-40 lg:left-80 z-0"
               data-labelBold="explore"
               data-label={service.attributes?.homePageCursorLable}
               data-id={i}

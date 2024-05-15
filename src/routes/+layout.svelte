@@ -8,8 +8,7 @@
   import Footer from "$lib/components/global/Footer.svelte";
   import { afterNavigate, beforeNavigate } from "$app/navigation";
   import { onMount } from "svelte";
-  import { fade, blur } from "svelte/transition";
-  import { page } from "$app/stores";
+  import { fade } from "svelte/transition";
 
   if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
@@ -18,7 +17,6 @@
   let cursor: HTMLElement;
   let cursorLabel: string;
   let cursorLabelBold: string;
-  let spinner: HTMLElement;
   let displayWidth: number
 
   let smoother: any;
@@ -43,30 +41,7 @@
     });
   };
 
-  $: {
-      // @ts-ignore
-      if (typeof gtag !== "undefined") {
-          // @ts-ignore
-          gtag("config", "G-E01M0L9W91", {
-              page_title: document.title,
-              page_path: $page.url.pathname,
-          });
-          // @ts-ignore
-          gtag('consent', 'default', {
-              'ad_storage': 'denied',
-              'analytics_storage': 'denied'
-          });
-
-          // @ts-ignore
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted'
-          });
-      }
-  }
-
   onMount(() => {
-
     displayWidth = window.innerWidth
     
     smoother = ScrollSmoother.create({

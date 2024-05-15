@@ -57,25 +57,22 @@
         let smoother = ScrollSmoother.get()
 
         const ctx = gsap.context(()=>{
-            let headingSplit = new SplitText(headingEl, {
+            let headingSplit = new SplitText(".headingEl", {
                     type: 'lines, chars',
                 }
             )
-            new SplitText(headingEl, {
+
+            new SplitText(".headingEl", {
                     type: 'lines',
-                    linesClass: 'headingLines'
+                    linesClass: 'headingLines',
                 }
             )
-
-            gsap.set(testEl, {
-                mixBlendMode: "luminosity"
-            })
     
             gsap.set('.headingLines', {
                 overflow: 'hidden'
             })
     
-            gsap.set(headingEl, {
+            gsap.set(".headingEl", {
                 opacity: 1
             })
     
@@ -97,8 +94,15 @@
 <section class=" bg-gradient-to-b from-dark-purple to-light-purple h-screen flex flex-col items-center justify-center p-6 md:p-10 relative z-0">
     <div class="flex flex-col justify-between h-full max-w-5xl relative z-20">
         <div></div>
-        <h1 bind:this={headingEl} data-speed='1.05' class="text-5xl text-center md:text-6xl md:text-start lg:text-8xl font-black opacity-0 transition-all text-light-cyan">{heading}</h1>
-        <p class=" text-light-cyan underline text-sm w-full text-center">{scroll}</p>
+        <div class="space-y-5 flex flex-col items-center">
+            <h1 bind:this={headingEl} data-speed='1.05' class="headingEl text-5xl text-center md:text-6xl uppercase lg:text-7xl font-black opacity-0 transition-all text-light-cyan">On the look for growth?<br> 
+            </h1>
+            <p class="headingEl text-3xl text-center max-w-lg  transition-all text-light-cyan">
+                Scroll down to find out how we make sure the numbers go up.
+            </p>
+
+        </div>
+        <p class=" text-light-cyan underline text-sm w-full text-center">Your Digital Transformation Starts Here</p>
     </div>
     <div bind:this={testEl} data-speed="0.90" class="absolute top-16 md:top-20 left-10 overflow-hidden w-52 md:w-80 md:left-40 z-0">
         <img bind:this={vectorLarge} class="" width="357px" height="357px" src="{PUBLIC_IMG_URL+imgLarge.url +"?format=webp&width=600"}" alt="{imgLarge.alternativeText}">

@@ -41,13 +41,13 @@
         data-speed="0.95"
         {src}
         {alt}
-        class="absolute right-10 lg:right-0 top-0 w-52 lg:w-80 h-auto z-0"
+        class="absolute right-10 lg:right-0 -top-20 w-52 lg:w-80 h-auto z-0"
       />
       <div class="relative z-10 flex space-y-5 flex-col">
         <h2
           bind:this={headingEl}
           data-speed="1.05"
-          class="text-3xl md:text-7xl uppercase lg:text-8xl font-black text-light-cyan pb-40 md:pb-10 lg:pb-0"
+          class="text-3xl md:text-7xl uppercase font-black text-light-cyan pb-40 md:pb-10 lg:pb-0"
         >
           {heading}
         </h2>
