@@ -81,7 +81,7 @@
 
       entranceTl.from(categoryEls, {
         opacity: 0,
-        duration: 1.5,
+        duration: 1,
         stagger: 0.1,
         ease: "power2.inOut",
       });
@@ -104,7 +104,7 @@
         {
           yPercent: 100,
           opacity: 0.5,
-          duration: 1.5,
+          duration: 1,
           stagger: 0.1,
           ease: "power2.inOut",
         },
@@ -113,7 +113,7 @@
 
       entranceTl.from(textEls[0], {
         opacity: 0,
-        duration: 2
+        duration: 1.5
       }, '-=1')
     });
 

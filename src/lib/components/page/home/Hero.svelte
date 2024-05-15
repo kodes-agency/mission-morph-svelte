@@ -79,7 +79,7 @@
             gsap.from(headingSplit.lines, {
                 delay: 0.5,
                 yPercent: 100,
-                duration: 2,
+                duration: 1.2,
                 stagger: 0.2,
                 ease: 'power4.inOut',
             })
@@ -95,9 +95,9 @@
     <div class="flex flex-col justify-between h-full max-w-5xl relative z-20">
         <div></div>
         <div class="space-y-5 flex flex-col items-center">
-            <h1 bind:this={headingEl} data-speed='1.05' class="headingEl text-5xl text-center md:text-6xl uppercase lg:text-7xl font-black opacity-0 transition-all text-light-cyan">On the look for growth?<br> 
+            <h1 bind:this={headingEl} data-speed='1.05' class="headingEl text-4xl text-center md:text-6xl uppercase lg:text-7xl font-black opacity-0 transition-all text-light-cyan">On the look <br> for growth?<br> 
             </h1>
-            <p class="headingEl text-3xl text-center opacity-0 max-w-lg transition-all text-light-cyan">
+            <p class="headingEl text-2xl md:text-3xl font-medium text-center opacity-0 max-w-lg transition-all text-light-cyan">
                 Scroll down to find out how we make sure the numbers go up.
             </p>
         </div>
@@ -106,7 +106,7 @@
     <div bind:this={testEl} data-speed="0.90" class="absolute top-16 md:top-20 left-10 overflow-hidden w-52 md:w-80 md:left-40 z-0">
         <img bind:this={vectorLarge} class="" width="357px" height="357px" src="{PUBLIC_IMG_URL+imgLarge.url +"?format=webp&width=600"}" alt="{imgLarge.alternativeText}">
     </div>
-    <div data-speed="0.92" class="mix-blend-luminosity w-40 absolute bottom-48 md:bottom-40 overflow-hidden right-32 md:right-40 z-10">
+    <div data-speed="0.92" class="mix-blend-luminosity w-40 absolute bottom-32 md:bottom-40 overflow-hidden right-32 md:right-40 z-10">
         <img bind:this={vectorMedium} width="218px" height="218px" src="{PUBLIC_IMG_URL+imgMedium.url +"?format=webp&width=500"}" alt="{imgMedium.alternativeText}">
     </div>
     <div data-speed="0.95" class="mix-blend-luminosity absolute bottom-10 right-10 w-12 md:w-auto overflow-hidden md:right-auto md:left-96 z-0">

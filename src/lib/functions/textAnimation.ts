@@ -31,7 +31,7 @@ async function animateText(sectionTarget:HTMLElement ,splitTarget:HTMLElement, f
         tl.from(splitText.lines, {
             yPercent: 100,
             opacity: 0.5,
-            duration: 1.5,
+            duration: 1,
             stagger: 0.02,
             ease: 'power2.inOut',
         })

@@ -28,7 +28,7 @@
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div class="p-6 max-w-3xl space-y-10 flex flex-col">
         <img data-speed="0.95" {src} {alt} class="-mb-[105px] ml-auto  lg:-mb-[125px] lg:-ml-[280px] w-56 md:w-80 z-0">
-        <h2 bind:this={headingEl} data-speed="1.05" class="text-6xl md:text-7xl uppercase font-black text-light-cyan relative z-1">{heading}</h2>
+        <h2 bind:this={headingEl} data-speed="1.05" class="text-5xl md:text-7xl uppercase font-black text-light-cyan relative z-1">{heading}</h2>
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         <p bind:this={textEl} data-speed="1.05" class="text-light-cyan text-lg max-w-md font-light relative z-1">{content}</p>
