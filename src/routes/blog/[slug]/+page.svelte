@@ -255,7 +255,7 @@
       <div class="flex flex-col items-center justify-center p-5 space-y-10 py-40 md:py-60">
         <p class="font-bold text-3xl md:text-5xl max-w-3xl text-center">{blog.ctaHeading}</p>
         <button
-          class="tiny w-fit max-w-xs md:max-w-none border-b-4 hover:scale-95 transition-transform duration-200 border-medium-purple md:font-bold text-xl"
+          class="{$page.url.href.includes("google-shut-down-google-business-websites") ? "google-book-app" : ""} tiny w-fit max-w-xs md:max-w-none border-b-4 hover:scale-95 transition-transform duration-200 border-medium-purple md:font-bold text-xl"
           on:click={() => {
             Calendly.initPopupWidget({
               url: "https://calendly.com/missionmorph/30min?hide_gdpr_banner=1",

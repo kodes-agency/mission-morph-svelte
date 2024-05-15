@@ -402,7 +402,8 @@
                 url: "https://calendly.com/missionmorph/30min?hide_gdpr_banner=1",
               });
               return false;
-            }}><u>together</u>.</button
+            }}><u>together</u>.
+          </button
           >
         </p>
       </div>
@@ -418,9 +419,17 @@
     />
   </section>
   {#if $page.route.id?.includes("offer") }
-    <button class="tiny fixed bottom-5 right-3 md:bottom-10 md:right-10 z-10 bg-medium-purple text-black rounded-full py-2 px-5 text-xs md:text-sm font-bold uppercase hover:bg-green hover:text-white transition-all duration-300">
+    <!-- <button class="tiny fixed bottom-5 right-3 md:bottom-10 md:right-10 z-10 bg-medium-purple text-black rounded-full py-2 px-5 text-xs md:text-sm font-bold uppercase hover:bg-green hover:text-white transition-all duration-300">
       <a href="https://calendly.com/missionmorph/30min" class="" target="_blank">Book a free consultation</a>
-    </button>
+    </button> -->
+    <button class="google-book-app tiny fixed bottom-5 right-3 md:bottom-10 md:right-10 z-10 bg-medium-purple text-black rounded-full py-2 px-5 text-xs md:text-sm font-bold uppercase hover:bg-green hover:text-white transition-all duration-300"
+    on:click={() => {
+      Calendly.initPopupWidget({
+        url: "https://calendly.com/missionmorph/30min?hide_gdpr_banner=1",
+      });
+      return false;
+    }}>Book a free consultation
+  </button>
   {/if}
 </nav>
 

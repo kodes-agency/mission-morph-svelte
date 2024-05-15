@@ -28,8 +28,13 @@
             <button class="w-full tiny bg-dark-purple rounded-full text-white py-4 hover:font-bold hover:bg-cyan  transition-all">
                 <a class="h-full py-4 px-16" href="{paymentLink}" target="_blank"> Subscribe today</a>
             </button>
-            <button class="w-full tiny underline underline-offset-2 text-dark-purple hover:font-bold  transition-all">
-                <a class="" href="{bookingLink}" target="_blank">Book a call</a>
+            <button class="google-book-app w-full tiny underline underline-offset-2 text-dark-purple hover:font-bold  transition-all"
+                on:click={() => {
+                Calendly.initPopupWidget({
+                    url: "https://calendly.com/missionmorph/30min?hide_gdpr_banner=1",
+                });
+                return false;
+                }}>Book a call
             </button>
         </div>
     </div>
